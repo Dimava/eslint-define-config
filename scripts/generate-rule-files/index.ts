@@ -38,9 +38,8 @@ function generateRuleIndexFile(
   /**
    * Build the exported type that is an intersection of all the rules.
    */
-  const rulesFinalIntersection: string = generatedRules
-    .map((name) => `${pascalCase(name)}Rule`)
-    .join(' & ');
+  const rulesFinalIntersection: string =
+    generatedRules.map((name) => `${pascalCase(name)}Rule`).join(' & ') || '{}';
 
   const pluginRulesType: string = dedent(`
     ${JsDocBuilder.build().add(`All ${name} rules.`).output()}
@@ -97,19 +96,27 @@ async function generateRulesFiles(
 
   const rules: Array<[string, Rule.RuleModule]> = Object.entries(pluginRules);
   for (const [ruleName, rule] of rules) {
-    logger.logUpdate(logger.colors.yellow(`  Generating > ${ruleName}`));
-
     const ruleFile: RuleFile = new RuleFile(
       plugin,
       pluginDirectory,
       ruleName,
       rule,
     );
+    logger.logUpdate(
+      logger.colors.yellow(`  Generating > ${ruleFile.prefixedRuleName()}`),
+    );
     try {
       await ruleFile.generate();
       ruleFile.writeGeneratedContent();
       ruleFile.applyPatch();
     } catch (err) {
+      ruleFile.writeGeneratedError(err as Error);
+      logger.logUpdate(
+        logger.colors.red(
+          `     ❌ Failed to generate ${ruleFile.prefixedRuleName()}`,
+        ),
+      );
+      logger.logUpdatePersist();
       failedRules.push(ruleName);
     }
   }

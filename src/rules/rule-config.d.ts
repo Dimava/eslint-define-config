@@ -19,13 +19,11 @@ export type RuleLevelAndOptions<Options extends any[] = any[]> = Prepend<
   RuleLevel
 >;
 
-export type RuleEntry<Options extends any[] = any[]> =
+export type Rule<Options extends [RuleLevel, ...any[]]> = //
+  Options extends [RuleLevel, ...infer Options]
+    ? RuleLevelAndOptions<Options>
+    : never;
+
+export type RuleConfig<Options extends any[] = any[]> =
   | RuleLevel
   | RuleLevelAndOptions<Options>;
-
-/**
- * Rule configuration.
- *
- * @alias RuleEntry
- */
-export type RuleConfig<Options extends any[] = any[]> = RuleEntry<Options>;
