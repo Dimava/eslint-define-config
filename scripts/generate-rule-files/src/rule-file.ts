@@ -208,7 +208,7 @@ export class RuleFile {
    */
   public writeGeneratedError(error: Error): void {
     this.createRuleDirectory();
-    const errorText: string = error.toString().replace(/^/gm, ' * ');
+    const errorText: string = error.toString().trimEnd().replace(/^/gm, ' * ');
     writeFileSync(
       this.errorFilePath(),
       `/**\n${errorText}\n */\n\n${this.content}`,
@@ -221,7 +221,7 @@ export class RuleFile {
    * Must be called after `generate()`.
    */
   public applyPatch(): void {
-    const pathParts: string[] = this.rulePath.split('/');
+    const pathParts: string[] = this.rulePath.split(/[\\/]/);
     const ruleFileName: string = pathParts[pathParts.length - 1] ?? '';
     const rulePlugin: string = pathParts[pathParts.length - 2] ?? '';
 
