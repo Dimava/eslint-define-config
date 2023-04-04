@@ -1,34 +1,17 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export interface NoInvalidRegexpOption {
-  allowConstructorFlags?: string[];
-}
-
-/**
- * Options.
- */
-export type NoInvalidRegexpOptions = [NoInvalidRegexpOption?];
-
-/**
- * Disallow invalid regular expression strings in `RegExp` constructors.
- *
- * @see [no-invalid-regexp](https://eslint.org/docs/rules/no-invalid-regexp)
- */
-export type NoInvalidRegexpRuleConfig = RuleConfig<NoInvalidRegexpOptions>;
-
-/**
- * Disallow invalid regular expression strings in `RegExp` constructors.
- *
- * @see [no-invalid-regexp](https://eslint.org/docs/rules/no-invalid-regexp)
- */
-export interface NoInvalidRegexpRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type NoInvalidRegexpRule = {
   /**
    * Disallow invalid regular expression strings in `RegExp` constructors.
    *
    * @see [no-invalid-regexp](https://eslint.org/docs/rules/no-invalid-regexp)
    */
-  'no-invalid-regexp': NoInvalidRegexpRuleConfig;
-}
+  'no-invalid-regexp': Rule<
+    [
+      RuleLevel,
+      {
+        allowConstructorFlags?: string[];
+      },
+    ]
+  >;
+};

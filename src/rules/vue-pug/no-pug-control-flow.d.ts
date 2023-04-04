@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow pug control flow features.
- *
- * @see [no-pug-control-flow](https://eslint-plugin-vue-pug.rash.codes/rules/no-pug-control-flow.html)
- */
-export type NoPugControlFlowRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow pug control flow features.
- *
- * @see [no-pug-control-flow](https://eslint-plugin-vue-pug.rash.codes/rules/no-pug-control-flow.html)
- */
-export interface NoPugControlFlowRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type NoPugControlFlowRule = {
   /**
    * Disallow pug control flow features.
    *
    * @see [no-pug-control-flow](https://eslint-plugin-vue-pug.rash.codes/rules/no-pug-control-flow.html)
    */
-  'vue-pug/no-pug-control-flow': NoPugControlFlowRuleConfig;
-}
+  'vue-pug/no-pug-control-flow': Rule<[RuleLevel]>;
+};

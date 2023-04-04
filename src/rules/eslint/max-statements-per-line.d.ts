@@ -1,35 +1,17 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export interface MaxStatementsPerLineOption {
-  max?: number;
-}
-
-/**
- * Options.
- */
-export type MaxStatementsPerLineOptions = [MaxStatementsPerLineOption?];
-
-/**
- * Enforce a maximum number of statements allowed per line.
- *
- * @see [max-statements-per-line](https://eslint.org/docs/rules/max-statements-per-line)
- */
-export type MaxStatementsPerLineRuleConfig =
-  RuleConfig<MaxStatementsPerLineOptions>;
-
-/**
- * Enforce a maximum number of statements allowed per line.
- *
- * @see [max-statements-per-line](https://eslint.org/docs/rules/max-statements-per-line)
- */
-export interface MaxStatementsPerLineRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type MaxStatementsPerLineRule = {
   /**
    * Enforce a maximum number of statements allowed per line.
    *
    * @see [max-statements-per-line](https://eslint.org/docs/rules/max-statements-per-line)
    */
-  'max-statements-per-line': MaxStatementsPerLineRuleConfig;
-}
+  'max-statements-per-line': Rule<
+    [
+      RuleLevel,
+      {
+        max?: number;
+      },
+    ]
+  >;
+};

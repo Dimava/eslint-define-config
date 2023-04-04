@@ -1,42 +1,24 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-/**
- * @minItems 0
- */
-export type NoRestrictedGlobalsOption = (
-  | string
-  | {
-      name: string;
-      message?: string;
-    }
-)[];
-
-/**
- * Options.
- */
-export type NoRestrictedGlobalsOptions = NoRestrictedGlobalsOption;
-
-/**
- * Disallow specified global variables.
- *
- * @see [no-restricted-globals](https://eslint.org/docs/rules/no-restricted-globals)
- */
-export type NoRestrictedGlobalsRuleConfig =
-  RuleConfig<NoRestrictedGlobalsOptions>;
-
-/**
- * Disallow specified global variables.
- *
- * @see [no-restricted-globals](https://eslint.org/docs/rules/no-restricted-globals)
- */
-export interface NoRestrictedGlobalsRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type NoRestrictedGlobalsRule = {
   /**
    * Disallow specified global variables.
    *
    * @see [no-restricted-globals](https://eslint.org/docs/rules/no-restricted-globals)
    */
-  'no-restricted-globals': NoRestrictedGlobalsRuleConfig;
-}
+  'no-restricted-globals': Rule<
+    [
+      RuleLevel,
+      /**
+       * @minItems 0
+       */
+      (
+        | string
+        | {
+            name: string;
+            message?: string;
+          }
+      )[],
+    ]
+  >;
+};

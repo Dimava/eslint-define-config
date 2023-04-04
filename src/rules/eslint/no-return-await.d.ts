@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow unnecessary `return await`.
- *
- * @see [no-return-await](https://eslint.org/docs/rules/no-return-await)
- */
-export type NoReturnAwaitRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow unnecessary `return await`.
- *
- * @see [no-return-await](https://eslint.org/docs/rules/no-return-await)
- */
-export interface NoReturnAwaitRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type NoReturnAwaitRule = {
   /**
    * Disallow unnecessary `return await`.
    *
    * @see [no-return-await](https://eslint.org/docs/rules/no-return-await)
    */
-  'no-return-await': NoReturnAwaitRuleConfig;
-}
+  'no-return-await': Rule<[RuleLevel]>;
+};

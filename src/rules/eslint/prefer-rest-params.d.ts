@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Require rest parameters instead of `arguments`.
- *
- * @see [prefer-rest-params](https://eslint.org/docs/rules/prefer-rest-params)
- */
-export type PreferRestParamsRuleConfig = RuleConfig<[]>;
-
-/**
- * Require rest parameters instead of `arguments`.
- *
- * @see [prefer-rest-params](https://eslint.org/docs/rules/prefer-rest-params)
- */
-export interface PreferRestParamsRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type PreferRestParamsRule = {
   /**
    * Require rest parameters instead of `arguments`.
    *
    * @see [prefer-rest-params](https://eslint.org/docs/rules/prefer-rest-params)
    */
-  'prefer-rest-params': PreferRestParamsRuleConfig;
-}
+  'prefer-rest-params': Rule<[RuleLevel]>;
+};

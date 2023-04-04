@@ -1,35 +1,6 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export interface NoDuplicateImportsOption {
-  includeExports?: boolean;
-}
-
-/**
- * Options.
- */
-export type NoDuplicateImportsOptions = [NoDuplicateImportsOption?];
-
-/**
- * Disallow duplicate imports.
- *
- * @deprecated
- *
- * @see [no-duplicate-imports](https://typescript-eslint.io/rules/no-duplicate-imports)
- */
-export type NoDuplicateImportsRuleConfig =
-  RuleConfig<NoDuplicateImportsOptions>;
-
-/**
- * Disallow duplicate imports.
- *
- * @deprecated
- *
- * @see [no-duplicate-imports](https://typescript-eslint.io/rules/no-duplicate-imports)
- */
-export interface NoDuplicateImportsRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type NoDuplicateImportsRule = {
   /**
    * Disallow duplicate imports.
    *
@@ -37,5 +8,12 @@ export interface NoDuplicateImportsRule {
    *
    * @see [no-duplicate-imports](https://typescript-eslint.io/rules/no-duplicate-imports)
    */
-  '@typescript-eslint/no-duplicate-imports': NoDuplicateImportsRuleConfig;
-}
+  '@typescript-eslint/no-duplicate-imports': Rule<
+    [
+      RuleLevel,
+      {
+        includeExports?: boolean;
+      },
+    ]
+  >;
+};

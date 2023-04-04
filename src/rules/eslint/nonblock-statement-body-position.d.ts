@@ -1,49 +1,24 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Config.
- */
-export interface NonblockStatementBodyPositionConfig {
-  overrides?: {
-    if?: 'beside' | 'below' | 'any';
-    else?: 'beside' | 'below' | 'any';
-    while?: 'beside' | 'below' | 'any';
-    do?: 'beside' | 'below' | 'any';
-    for?: 'beside' | 'below' | 'any';
-  };
-}
-
-/**
- * Option.
- */
-export type NonblockStatementBodyPositionOption = 'beside' | 'below' | 'any';
-
-/**
- * Options.
- */
-export type NonblockStatementBodyPositionOptions = [
-  NonblockStatementBodyPositionOption?,
-  NonblockStatementBodyPositionConfig?,
-];
-
-/**
- * Enforce the location of single-line statements.
- *
- * @see [nonblock-statement-body-position](https://eslint.org/docs/rules/nonblock-statement-body-position)
- */
-export type NonblockStatementBodyPositionRuleConfig =
-  RuleConfig<NonblockStatementBodyPositionOptions>;
-
-/**
- * Enforce the location of single-line statements.
- *
- * @see [nonblock-statement-body-position](https://eslint.org/docs/rules/nonblock-statement-body-position)
- */
-export interface NonblockStatementBodyPositionRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type NonblockStatementBodyPositionRule = {
   /**
    * Enforce the location of single-line statements.
    *
    * @see [nonblock-statement-body-position](https://eslint.org/docs/rules/nonblock-statement-body-position)
    */
-  'nonblock-statement-body-position': NonblockStatementBodyPositionRuleConfig;
-}
+  'nonblock-statement-body-position': Rule<
+    [
+      RuleLevel,
+      'beside' | 'below' | 'any',
+      {
+        overrides?: {
+          if?: 'beside' | 'below' | 'any';
+          else?: 'beside' | 'below' | 'any';
+          while?: 'beside' | 'below' | 'any';
+          do?: 'beside' | 'below' | 'any';
+          for?: 'beside' | 'below' | 'any';
+        };
+      },
+    ]
+  >;
+};

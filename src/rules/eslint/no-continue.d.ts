@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow `continue` statements.
- *
- * @see [no-continue](https://eslint.org/docs/rules/no-continue)
- */
-export type NoContinueRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow `continue` statements.
- *
- * @see [no-continue](https://eslint.org/docs/rules/no-continue)
- */
-export interface NoContinueRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type NoContinueRule = {
   /**
    * Disallow `continue` statements.
    *
    * @see [no-continue](https://eslint.org/docs/rules/no-continue)
    */
-  'no-continue': NoContinueRuleConfig;
-}
+  'no-continue': Rule<[RuleLevel]>;
+};

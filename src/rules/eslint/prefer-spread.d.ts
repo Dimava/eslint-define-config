@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Require spread operators instead of `.apply()`.
- *
- * @see [prefer-spread](https://eslint.org/docs/rules/prefer-spread)
- */
-export type PreferSpreadRuleConfig = RuleConfig<[]>;
-
-/**
- * Require spread operators instead of `.apply()`.
- *
- * @see [prefer-spread](https://eslint.org/docs/rules/prefer-spread)
- */
-export interface PreferSpreadRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type PreferSpreadRule = {
   /**
    * Require spread operators instead of `.apply()`.
    *
    * @see [prefer-spread](https://eslint.org/docs/rules/prefer-spread)
    */
-  'prefer-spread': PreferSpreadRuleConfig;
-}
+  'prefer-spread': Rule<[RuleLevel]>;
+};

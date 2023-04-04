@@ -1,34 +1,17 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export interface SortVarsOption {
-  ignoreCase?: boolean;
-}
-
-/**
- * Options.
- */
-export type SortVarsOptions = [SortVarsOption?];
-
-/**
- * Require variables within the same declaration block to be sorted.
- *
- * @see [sort-vars](https://eslint.org/docs/rules/sort-vars)
- */
-export type SortVarsRuleConfig = RuleConfig<SortVarsOptions>;
-
-/**
- * Require variables within the same declaration block to be sorted.
- *
- * @see [sort-vars](https://eslint.org/docs/rules/sort-vars)
- */
-export interface SortVarsRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type SortVarsRule = {
   /**
    * Require variables within the same declaration block to be sorted.
    *
    * @see [sort-vars](https://eslint.org/docs/rules/sort-vars)
    */
-  'sort-vars': SortVarsRuleConfig;
-}
+  'sort-vars': Rule<
+    [
+      RuleLevel,
+      {
+        ignoreCase?: boolean;
+      },
+    ]
+  >;
+};

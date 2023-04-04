@@ -1,35 +1,18 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export interface NoReservedKeysOption {
-  reserved?: any[];
-  groups?: any[];
-}
-
-/**
- * Options.
- */
-export type NoReservedKeysOptions = [NoReservedKeysOption?];
-
-/**
- * Disallow overwriting reserved keys.
- *
- * @see [no-reserved-keys](https://eslint.vuejs.org/rules/no-reserved-keys.html)
- */
-export type NoReservedKeysRuleConfig = RuleConfig<NoReservedKeysOptions>;
-
-/**
- * Disallow overwriting reserved keys.
- *
- * @see [no-reserved-keys](https://eslint.vuejs.org/rules/no-reserved-keys.html)
- */
-export interface NoReservedKeysRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type NoReservedKeysRule = {
   /**
    * Disallow overwriting reserved keys.
    *
    * @see [no-reserved-keys](https://eslint.vuejs.org/rules/no-reserved-keys.html)
    */
-  'vue/no-reserved-keys': NoReservedKeysRuleConfig;
-}
+  'vue/no-reserved-keys': Rule<
+    [
+      RuleLevel,
+      {
+        reserved?: any[];
+        groups?: any[];
+      },
+    ]
+  >;
+};

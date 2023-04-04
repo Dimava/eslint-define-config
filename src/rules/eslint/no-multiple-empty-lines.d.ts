@@ -1,37 +1,19 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export interface NoMultipleEmptyLinesOption {
-  max: number;
-  maxEOF?: number;
-  maxBOF?: number;
-}
-
-/**
- * Options.
- */
-export type NoMultipleEmptyLinesOptions = [NoMultipleEmptyLinesOption?];
-
-/**
- * Disallow multiple empty lines.
- *
- * @see [no-multiple-empty-lines](https://eslint.org/docs/rules/no-multiple-empty-lines)
- */
-export type NoMultipleEmptyLinesRuleConfig =
-  RuleConfig<NoMultipleEmptyLinesOptions>;
-
-/**
- * Disallow multiple empty lines.
- *
- * @see [no-multiple-empty-lines](https://eslint.org/docs/rules/no-multiple-empty-lines)
- */
-export interface NoMultipleEmptyLinesRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type NoMultipleEmptyLinesRule = {
   /**
    * Disallow multiple empty lines.
    *
    * @see [no-multiple-empty-lines](https://eslint.org/docs/rules/no-multiple-empty-lines)
    */
-  'no-multiple-empty-lines': NoMultipleEmptyLinesRuleConfig;
-}
+  'no-multiple-empty-lines': Rule<
+    [
+      RuleLevel,
+      {
+        max: number;
+        maxEOF?: number;
+        maxBOF?: number;
+      },
+    ]
+  >;
+};

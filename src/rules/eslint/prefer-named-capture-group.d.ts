@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Enforce using named capture group in regular expression.
- *
- * @see [prefer-named-capture-group](https://eslint.org/docs/rules/prefer-named-capture-group)
- */
-export type PreferNamedCaptureGroupRuleConfig = RuleConfig<[]>;
-
-/**
- * Enforce using named capture group in regular expression.
- *
- * @see [prefer-named-capture-group](https://eslint.org/docs/rules/prefer-named-capture-group)
- */
-export interface PreferNamedCaptureGroupRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type PreferNamedCaptureGroupRule = {
   /**
    * Enforce using named capture group in regular expression.
    *
    * @see [prefer-named-capture-group](https://eslint.org/docs/rules/prefer-named-capture-group)
    */
-  'prefer-named-capture-group': PreferNamedCaptureGroupRuleConfig;
-}
+  'prefer-named-capture-group': Rule<[RuleLevel]>;
+};

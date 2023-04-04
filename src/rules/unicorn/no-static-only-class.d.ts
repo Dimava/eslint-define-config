@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow classes that only have static members.
- *
- * @see [no-static-only-class](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/no-static-only-class.md)
- */
-export type NoStaticOnlyClassRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow classes that only have static members.
- *
- * @see [no-static-only-class](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/no-static-only-class.md)
- */
-export interface NoStaticOnlyClassRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type NoStaticOnlyClassRule = {
   /**
    * Disallow classes that only have static members.
    *
    * @see [no-static-only-class](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/no-static-only-class.md)
    */
-  'unicorn/no-static-only-class': NoStaticOnlyClassRuleConfig;
-}
+  'unicorn/no-static-only-class': Rule<[RuleLevel]>;
+};

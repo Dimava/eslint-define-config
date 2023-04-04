@@ -1,37 +1,6 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export type NoMixedRequiresOption =
-  | boolean
-  | {
-      grouping?: boolean;
-      allowCall?: boolean;
-    };
-
-/**
- * Options.
- */
-export type NoMixedRequiresOptions = [NoMixedRequiresOption?];
-
-/**
- * Disallow `require` calls to be mixed with regular variable declarations.
- *
- * @deprecated
- *
- * @see [no-mixed-requires](https://eslint.org/docs/rules/no-mixed-requires)
- */
-export type NoMixedRequiresRuleConfig = RuleConfig<NoMixedRequiresOptions>;
-
-/**
- * Disallow `require` calls to be mixed with regular variable declarations.
- *
- * @deprecated
- *
- * @see [no-mixed-requires](https://eslint.org/docs/rules/no-mixed-requires)
- */
-export interface NoMixedRequiresRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type NoMixedRequiresRule = {
   /**
    * Disallow `require` calls to be mixed with regular variable declarations.
    *
@@ -39,5 +8,16 @@ export interface NoMixedRequiresRule {
    *
    * @see [no-mixed-requires](https://eslint.org/docs/rules/no-mixed-requires)
    */
-  'no-mixed-requires': NoMixedRequiresRuleConfig;
-}
+  'no-mixed-requires': Rule<
+    [
+      RuleLevel,
+      (
+        | boolean
+        | {
+            grouping?: boolean;
+            allowCall?: boolean;
+          }
+      ),
+    ]
+  >;
+};

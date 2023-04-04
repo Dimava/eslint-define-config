@@ -1,10 +1,16 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export type PaddingType = 'any' | 'never' | 'always';
-export type StatementType =
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type PaddingLineBetweenStatementsRule = {
+  /**
+   * Require or disallow padding lines between statements.
+   *
+   * @see [padding-line-between-statements](https://typescript-eslint.io/rules/padding-line-between-statements)
+   */
+  '@typescript-eslint/padding-line-between-statements': Rule<
+    [RuleLevel, 'any' | 'never' | 'always']
+  >;
+};
+type StatementType =
   | (
       | '*'
       | 'block-like'
@@ -133,36 +139,8 @@ export type StatementType =
         | 'type'
       )[],
     ];
-export type PaddingLineBetweenStatementsOption = {
+type PaddingLineBetweenStatementsOption = {
   blankLine: PaddingType;
   prev: StatementType;
   next: StatementType;
 }[];
-
-/**
- * Options.
- */
-export type PaddingLineBetweenStatementsOptions =
-  PaddingLineBetweenStatementsOption;
-
-/**
- * Require or disallow padding lines between statements.
- *
- * @see [padding-line-between-statements](https://typescript-eslint.io/rules/padding-line-between-statements)
- */
-export type PaddingLineBetweenStatementsRuleConfig =
-  RuleConfig<PaddingLineBetweenStatementsOptions>;
-
-/**
- * Require or disallow padding lines between statements.
- *
- * @see [padding-line-between-statements](https://typescript-eslint.io/rules/padding-line-between-statements)
- */
-export interface PaddingLineBetweenStatementsRule {
-  /**
-   * Require or disallow padding lines between statements.
-   *
-   * @see [padding-line-between-statements](https://typescript-eslint.io/rules/padding-line-between-statements)
-   */
-  '@typescript-eslint/padding-line-between-statements': PaddingLineBetweenStatementsRuleConfig;
-}

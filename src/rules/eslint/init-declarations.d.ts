@@ -1,42 +1,26 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export type InitDeclarationsOption =
-  | []
-  | ['always']
-  | []
-  | ['never']
-  | [
-      'never',
-      {
-        ignoreForLoopInit?: boolean;
-      },
-    ];
-
-/**
- * Options.
- */
-export type InitDeclarationsOptions = InitDeclarationsOption;
-
-/**
- * Require or disallow initialization in variable declarations.
- *
- * @see [init-declarations](https://eslint.org/docs/rules/init-declarations)
- */
-export type InitDeclarationsRuleConfig = RuleConfig<InitDeclarationsOptions>;
-
-/**
- * Require or disallow initialization in variable declarations.
- *
- * @see [init-declarations](https://eslint.org/docs/rules/init-declarations)
- */
-export interface InitDeclarationsRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type InitDeclarationsRule = {
   /**
    * Require or disallow initialization in variable declarations.
    *
    * @see [init-declarations](https://eslint.org/docs/rules/init-declarations)
    */
-  'init-declarations': InitDeclarationsRuleConfig;
-}
+  'init-declarations': Rule<
+    [
+      RuleLevel,
+      (
+        | []
+        | ['always']
+        | []
+        | ['never']
+        | [
+            'never',
+            {
+              ignoreForLoopInit?: boolean;
+            },
+          ]
+      ),
+    ]
+  >;
+};

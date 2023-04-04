@@ -92,7 +92,6 @@ import type { NoConsoleRule } from './no-console';
 import type { NoConstAssignRule } from './no-const-assign';
 import type { NoConstantBinaryExpressionRule } from './no-constant-binary-expression';
 import type { NoConstantConditionRule } from './no-constant-condition';
-import type { NoConstructorReturnRule } from './no-constructor-return';
 import type { NoContinueRule } from './no-continue';
 import type { NoControlRegexRule } from './no-control-regex';
 import type { NoDebuggerRule } from './no-debugger';
@@ -386,7 +385,6 @@ export type EslintRules = AccessorPairsRule &
   NoConstAssignRule &
   NoConstantBinaryExpressionRule &
   NoConstantConditionRule &
-  NoConstructorReturnRule &
   NoContinueRule &
   NoControlRegexRule &
   NoDebuggerRule &

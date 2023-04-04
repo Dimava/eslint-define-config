@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Forbid the use of mutable exports with `var` or `let`.
- *
- * @see [no-mutable-exports](https://github.com/import-js/eslint-plugin-import/blob/v2.27.5/docs/rules/no-mutable-exports.md)
- */
-export type NoMutableExportsRuleConfig = RuleConfig<[]>;
-
-/**
- * Forbid the use of mutable exports with `var` or `let`.
- *
- * @see [no-mutable-exports](https://github.com/import-js/eslint-plugin-import/blob/v2.27.5/docs/rules/no-mutable-exports.md)
- */
-export interface NoMutableExportsRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type NoMutableExportsRule = {
   /**
    * Forbid the use of mutable exports with `var` or `let`.
    *
    * @see [no-mutable-exports](https://github.com/import-js/eslint-plugin-import/blob/v2.27.5/docs/rules/no-mutable-exports.md)
    */
-  'import/no-mutable-exports': NoMutableExportsRuleConfig;
-}
+  'import/no-mutable-exports': Rule<[RuleLevel]>;
+};

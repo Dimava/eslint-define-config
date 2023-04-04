@@ -1,35 +1,17 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export interface ComponentTagsOrderOption {
-  order?: (string | string[])[];
-}
-
-/**
- * Options.
- */
-export type ComponentTagsOrderOptions = [ComponentTagsOrderOption?];
-
-/**
- * Enforce order of component top-level elements.
- *
- * @see [component-tags-order](https://eslint.vuejs.org/rules/component-tags-order.html)
- */
-export type ComponentTagsOrderRuleConfig =
-  RuleConfig<ComponentTagsOrderOptions>;
-
-/**
- * Enforce order of component top-level elements.
- *
- * @see [component-tags-order](https://eslint.vuejs.org/rules/component-tags-order.html)
- */
-export interface ComponentTagsOrderRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type ComponentTagsOrderRule = {
   /**
    * Enforce order of component top-level elements.
    *
    * @see [component-tags-order](https://eslint.vuejs.org/rules/component-tags-order.html)
    */
-  'vue/component-tags-order': ComponentTagsOrderRuleConfig;
-}
+  'vue/component-tags-order': Rule<
+    [
+      RuleLevel,
+      {
+        order?: (string | string[])[];
+      },
+    ]
+  >;
+};

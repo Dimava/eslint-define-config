@@ -1,35 +1,12 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export type ConsistentTypeDefinitionsOption = 'interface' | 'type';
-
-/**
- * Options.
- */
-export type ConsistentTypeDefinitionsOptions = [
-  ConsistentTypeDefinitionsOption?,
-];
-
-/**
- * Enforce type definitions to consistently use either `interface` or `type`.
- *
- * @see [consistent-type-definitions](https://typescript-eslint.io/rules/consistent-type-definitions)
- */
-export type ConsistentTypeDefinitionsRuleConfig =
-  RuleConfig<ConsistentTypeDefinitionsOptions>;
-
-/**
- * Enforce type definitions to consistently use either `interface` or `type`.
- *
- * @see [consistent-type-definitions](https://typescript-eslint.io/rules/consistent-type-definitions)
- */
-export interface ConsistentTypeDefinitionsRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type ConsistentTypeDefinitionsRule = {
   /**
    * Enforce type definitions to consistently use either `interface` or `type`.
    *
    * @see [consistent-type-definitions](https://typescript-eslint.io/rules/consistent-type-definitions)
    */
-  '@typescript-eslint/consistent-type-definitions': ConsistentTypeDefinitionsRuleConfig;
-}
+  '@typescript-eslint/consistent-type-definitions': Rule<
+    [RuleLevel, 'interface' | 'type']
+  >;
+};

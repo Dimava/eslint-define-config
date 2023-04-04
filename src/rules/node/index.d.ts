@@ -1,6 +1,5 @@
 import type { CallbackReturnRule } from './callback-return';
 import type { ExportsStyleRule } from './exports-style';
-import type { FileExtensionInImportRule } from './file-extension-in-import';
 import type { GlobalRequireRule } from './global-require';
 import type { HandleCallbackErrRule } from './handle-callback-err';
 import type { NoCallbackLiteralRule } from './no-callback-literal';
@@ -43,7 +42,6 @@ import type { ShebangRule } from './shebang';
  */
 export type NodeRules = CallbackReturnRule &
   ExportsStyleRule &
-  FileExtensionInImportRule &
   GlobalRequireRule &
   HandleCallbackErrRule &
   NoCallbackLiteralRule &

@@ -1,7 +1,5 @@
 import type { AdjacentOverloadSignaturesRule } from './adjacent-overload-signatures';
-import type { ArrayTypeRule } from './array-type';
 import type { AwaitThenableRule } from './await-thenable';
-import type { BanTsCommentRule } from './ban-ts-comment';
 import type { BanTslintCommentRule } from './ban-tslint-comment';
 import type { BanTypesRule } from './ban-types';
 import type { BlockSpacingRule } from './block-spacing';
@@ -18,7 +16,6 @@ import type { ConsistentTypeImportsRule } from './consistent-type-imports';
 import type { DefaultParamLastRule } from './default-param-last';
 import type { DotNotationRule } from './dot-notation';
 import type { ExplicitFunctionReturnTypeRule } from './explicit-function-return-type';
-import type { ExplicitMemberAccessibilityRule } from './explicit-member-accessibility';
 import type { ExplicitModuleBoundaryTypesRule } from './explicit-module-boundary-types';
 import type { FuncCallSpacingRule } from './func-call-spacing';
 import type { IndentRule } from './indent';
@@ -26,7 +23,6 @@ import type { InitDeclarationsRule } from './init-declarations';
 import type { KeySpacingRule } from './key-spacing';
 import type { KeywordSpacingRule } from './keyword-spacing';
 import type { LinesAroundCommentRule } from './lines-around-comment';
-import type { LinesBetweenClassMembersRule } from './lines-between-class-members';
 import type { MemberDelimiterStyleRule } from './member-delimiter-style';
 import type { MemberOrderingRule } from './member-ordering';
 import type { MethodSignatureStyleRule } from './method-signature-style';
@@ -96,7 +92,6 @@ import type { NoVarRequiresRule } from './no-var-requires';
 import type { NonNullableTypeAssertionStyleRule } from './non-nullable-type-assertion-style';
 import type { ObjectCurlySpacingRule } from './object-curly-spacing';
 import type { PaddingLineBetweenStatementsRule } from './padding-line-between-statements';
-import type { ParameterPropertiesRule } from './parameter-properties';
 import type { PreferAsConstRule } from './prefer-as-const';
 import type { PreferEnumInitializersRule } from './prefer-enum-initializers';
 import type { PreferForOfRule } from './prefer-for-of';
@@ -138,9 +133,7 @@ import type { UnifiedSignaturesRule } from './unified-signatures';
  * All TypeScript rules.
  */
 export type TypeScriptRules = AdjacentOverloadSignaturesRule &
-  ArrayTypeRule &
   AwaitThenableRule &
-  BanTsCommentRule &
   BanTslintCommentRule &
   BanTypesRule &
   BlockSpacingRule &
@@ -157,7 +150,6 @@ export type TypeScriptRules = AdjacentOverloadSignaturesRule &
   DefaultParamLastRule &
   DotNotationRule &
   ExplicitFunctionReturnTypeRule &
-  ExplicitMemberAccessibilityRule &
   ExplicitModuleBoundaryTypesRule &
   FuncCallSpacingRule &
   IndentRule &
@@ -165,7 +157,6 @@ export type TypeScriptRules = AdjacentOverloadSignaturesRule &
   KeySpacingRule &
   KeywordSpacingRule &
   LinesAroundCommentRule &
-  LinesBetweenClassMembersRule &
   MemberDelimiterStyleRule &
   MemberOrderingRule &
   MethodSignatureStyleRule &
@@ -235,7 +226,6 @@ export type TypeScriptRules = AdjacentOverloadSignaturesRule &
   NonNullableTypeAssertionStyleRule &
   ObjectCurlySpacingRule &
   PaddingLineBetweenStatementsRule &
-  ParameterPropertiesRule &
   PreferAsConstRule &
   PreferEnumInitializersRule &
   PreferForOfRule &

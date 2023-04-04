@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow nested ternary expressions.
- *
- * @see [no-nested-ternary](https://eslint.org/docs/rules/no-nested-ternary)
- */
-export type NoNestedTernaryRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow nested ternary expressions.
- *
- * @see [no-nested-ternary](https://eslint.org/docs/rules/no-nested-ternary)
- */
-export interface NoNestedTernaryRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type NoNestedTernaryRule = {
   /**
    * Disallow nested ternary expressions.
    *
    * @see [no-nested-ternary](https://eslint.org/docs/rules/no-nested-ternary)
    */
-  'no-nested-ternary': NoNestedTernaryRuleConfig;
-}
+  'no-nested-ternary': Rule<[RuleLevel]>;
+};

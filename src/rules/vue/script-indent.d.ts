@@ -1,45 +1,24 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Config.
- */
-export interface ScriptIndentConfig {
-  baseIndent?: number;
-  switchCase?: number;
-  ignores?: (string & {
-    [k: string]: any;
-  } & {
-    [k: string]: any;
-  })[];
-}
-
-/**
- * Option.
- */
-export type ScriptIndentOption = number | 'tab';
-
-/**
- * Options.
- */
-export type ScriptIndentOptions = [ScriptIndentOption?, ScriptIndentConfig?];
-
-/**
- * Enforce consistent indentation in `<script>`.
- *
- * @see [script-indent](https://eslint.vuejs.org/rules/script-indent.html)
- */
-export type ScriptIndentRuleConfig = RuleConfig<ScriptIndentOptions>;
-
-/**
- * Enforce consistent indentation in `<script>`.
- *
- * @see [script-indent](https://eslint.vuejs.org/rules/script-indent.html)
- */
-export interface ScriptIndentRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type ScriptIndentRule = {
   /**
    * Enforce consistent indentation in `<script>`.
    *
    * @see [script-indent](https://eslint.vuejs.org/rules/script-indent.html)
    */
-  'vue/script-indent': ScriptIndentRuleConfig;
-}
+  'vue/script-indent': Rule<
+    [
+      RuleLevel,
+      number | 'tab',
+      {
+        baseIndent?: number;
+        switchCase?: number;
+        ignores?: (string & {
+          [k: string]: any;
+        } & {
+          [k: string]: any;
+        })[];
+      },
+    ]
+  >;
+};

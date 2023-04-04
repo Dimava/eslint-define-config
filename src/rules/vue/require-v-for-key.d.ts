@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Require `v-bind:key` with `v-for` directives.
- *
- * @see [require-v-for-key](https://eslint.vuejs.org/rules/require-v-for-key.html)
- */
-export type RequireVForKeyRuleConfig = RuleConfig<[]>;
-
-/**
- * Require `v-bind:key` with `v-for` directives.
- *
- * @see [require-v-for-key](https://eslint.vuejs.org/rules/require-v-for-key.html)
- */
-export interface RequireVForKeyRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type RequireVForKeyRule = {
   /**
    * Require `v-bind:key` with `v-for` directives.
    *
    * @see [require-v-for-key](https://eslint.vuejs.org/rules/require-v-for-key.html)
    */
-  'vue/require-v-for-key': RequireVForKeyRuleConfig;
-}
+  'vue/require-v-for-key': Rule<[RuleLevel]>;
+};

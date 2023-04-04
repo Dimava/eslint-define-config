@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow confusing multiline expressions.
- *
- * @see [no-unexpected-multiline](https://eslint.org/docs/rules/no-unexpected-multiline)
- */
-export type NoUnexpectedMultilineRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow confusing multiline expressions.
- *
- * @see [no-unexpected-multiline](https://eslint.org/docs/rules/no-unexpected-multiline)
- */
-export interface NoUnexpectedMultilineRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type NoUnexpectedMultilineRule = {
   /**
    * Disallow confusing multiline expressions.
    *
    * @see [no-unexpected-multiline](https://eslint.org/docs/rules/no-unexpected-multiline)
    */
-  'no-unexpected-multiline': NoUnexpectedMultilineRuleConfig;
-}
+  'no-unexpected-multiline': Rule<[RuleLevel]>;
+};

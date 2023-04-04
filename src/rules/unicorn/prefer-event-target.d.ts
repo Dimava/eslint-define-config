@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Prefer `EventTarget` over `EventEmitter`.
- *
- * @see [prefer-event-target](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/prefer-event-target.md)
- */
-export type PreferEventTargetRuleConfig = RuleConfig<[]>;
-
-/**
- * Prefer `EventTarget` over `EventEmitter`.
- *
- * @see [prefer-event-target](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/prefer-event-target.md)
- */
-export interface PreferEventTargetRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type PreferEventTargetRule = {
   /**
    * Prefer `EventTarget` over `EventEmitter`.
    *
    * @see [prefer-event-target](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/prefer-event-target.md)
    */
-  'unicorn/prefer-event-target': PreferEventTargetRuleConfig;
-}
+  'unicorn/prefer-event-target': Rule<[RuleLevel]>;
+};

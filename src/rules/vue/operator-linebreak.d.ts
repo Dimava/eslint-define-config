@@ -1,44 +1,20 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Config.
- */
-export interface OperatorLinebreakConfig {
-  overrides?: {
-    [k: string]: 'after' | 'before' | 'none' | 'ignore';
-  };
-}
-
-/**
- * Option.
- */
-export type OperatorLinebreakOption = 'after' | 'before' | 'none' | null;
-
-/**
- * Options.
- */
-export type OperatorLinebreakOptions = [
-  OperatorLinebreakOption?,
-  OperatorLinebreakConfig?,
-];
-
-/**
- * Enforce consistent linebreak style for operators in `<template>`.
- *
- * @see [operator-linebreak](https://eslint.vuejs.org/rules/operator-linebreak.html)
- */
-export type OperatorLinebreakRuleConfig = RuleConfig<OperatorLinebreakOptions>;
-
-/**
- * Enforce consistent linebreak style for operators in `<template>`.
- *
- * @see [operator-linebreak](https://eslint.vuejs.org/rules/operator-linebreak.html)
- */
-export interface OperatorLinebreakRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type OperatorLinebreakRule = {
   /**
    * Enforce consistent linebreak style for operators in `<template>`.
    *
    * @see [operator-linebreak](https://eslint.vuejs.org/rules/operator-linebreak.html)
    */
-  'vue/operator-linebreak': OperatorLinebreakRuleConfig;
-}
+  'vue/operator-linebreak': Rule<
+    [
+      RuleLevel,
+      'after' | 'before' | 'none' | null,
+      {
+        overrides?: {
+          [k: string]: 'after' | 'before' | 'none' | 'ignore';
+        };
+      },
+    ]
+  >;
+};

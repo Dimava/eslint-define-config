@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow reassigning class members.
- *
- * @see [no-class-assign](https://eslint.org/docs/rules/no-class-assign)
- */
-export type NoClassAssignRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow reassigning class members.
- *
- * @see [no-class-assign](https://eslint.org/docs/rules/no-class-assign)
- */
-export interface NoClassAssignRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type NoClassAssignRule = {
   /**
    * Disallow reassigning class members.
    *
    * @see [no-class-assign](https://eslint.org/docs/rules/no-class-assign)
    */
-  'no-class-assign': NoClassAssignRuleConfig;
-}
+  'no-class-assign': Rule<[RuleLevel]>;
+};

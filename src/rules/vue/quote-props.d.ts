@@ -1,44 +1,28 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export type QuotePropsOption =
-  | []
-  | ['always' | 'as-needed' | 'consistent' | 'consistent-as-needed']
-  | []
-  | ['always' | 'as-needed' | 'consistent' | 'consistent-as-needed']
-  | [
-      'always' | 'as-needed' | 'consistent' | 'consistent-as-needed',
-      {
-        keywords?: boolean;
-        unnecessary?: boolean;
-        numbers?: boolean;
-      },
-    ];
-
-/**
- * Options.
- */
-export type QuotePropsOptions = QuotePropsOption;
-
-/**
- * Require quotes around object literal property names in `<template>`.
- *
- * @see [quote-props](https://eslint.vuejs.org/rules/quote-props.html)
- */
-export type QuotePropsRuleConfig = RuleConfig<QuotePropsOptions>;
-
-/**
- * Require quotes around object literal property names in `<template>`.
- *
- * @see [quote-props](https://eslint.vuejs.org/rules/quote-props.html)
- */
-export interface QuotePropsRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type QuotePropsRule = {
   /**
    * Require quotes around object literal property names in `<template>`.
    *
    * @see [quote-props](https://eslint.vuejs.org/rules/quote-props.html)
    */
-  'vue/quote-props': QuotePropsRuleConfig;
-}
+  'vue/quote-props': Rule<
+    [
+      RuleLevel,
+      (
+        | []
+        | ['always' | 'as-needed' | 'consistent' | 'consistent-as-needed']
+        | []
+        | ['always' | 'as-needed' | 'consistent' | 'consistent-as-needed']
+        | [
+            'always' | 'as-needed' | 'consistent' | 'consistent-as-needed',
+            {
+              keywords?: boolean;
+              unnecessary?: boolean;
+              numbers?: boolean;
+            },
+          ]
+      ),
+    ]
+  >;
+};

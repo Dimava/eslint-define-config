@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Enforce end tag style.
- *
- * @see [html-end-tags](https://eslint.vuejs.org/rules/html-end-tags.html)
- */
-export type HtmlEndTagsRuleConfig = RuleConfig<[]>;
-
-/**
- * Enforce end tag style.
- *
- * @see [html-end-tags](https://eslint.vuejs.org/rules/html-end-tags.html)
- */
-export interface HtmlEndTagsRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type HtmlEndTagsRule = {
   /**
    * Enforce end tag style.
    *
    * @see [html-end-tags](https://eslint.vuejs.org/rules/html-end-tags.html)
    */
-  'vue/html-end-tags': HtmlEndTagsRuleConfig;
-}
+  'vue/html-end-tags': Rule<[RuleLevel]>;
+};

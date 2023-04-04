@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow template literals.
- *
- * @see [no-template-literals](https://ota-meshi.github.io/eslint-plugin-jsonc/rules/no-template-literals.html)
- */
-export type NoTemplateLiteralsRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow template literals.
- *
- * @see [no-template-literals](https://ota-meshi.github.io/eslint-plugin-jsonc/rules/no-template-literals.html)
- */
-export interface NoTemplateLiteralsRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type NoTemplateLiteralsRule = {
   /**
    * Disallow template literals.
    *
    * @see [no-template-literals](https://ota-meshi.github.io/eslint-plugin-jsonc/rules/no-template-literals.html)
    */
-  'jsonc/no-template-literals': NoTemplateLiteralsRuleConfig;
-}
+  'jsonc/no-template-literals': Rule<[RuleLevel]>;
+};

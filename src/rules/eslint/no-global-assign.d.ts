@@ -1,34 +1,17 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export interface NoGlobalAssignOption {
-  exceptions?: string[];
-}
-
-/**
- * Options.
- */
-export type NoGlobalAssignOptions = [NoGlobalAssignOption?];
-
-/**
- * Disallow assignments to native objects or read-only global variables.
- *
- * @see [no-global-assign](https://eslint.org/docs/rules/no-global-assign)
- */
-export type NoGlobalAssignRuleConfig = RuleConfig<NoGlobalAssignOptions>;
-
-/**
- * Disallow assignments to native objects or read-only global variables.
- *
- * @see [no-global-assign](https://eslint.org/docs/rules/no-global-assign)
- */
-export interface NoGlobalAssignRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type NoGlobalAssignRule = {
   /**
    * Disallow assignments to native objects or read-only global variables.
    *
    * @see [no-global-assign](https://eslint.org/docs/rules/no-global-assign)
    */
-  'no-global-assign': NoGlobalAssignRuleConfig;
-}
+  'no-global-assign': Rule<
+    [
+      RuleLevel,
+      {
+        exceptions?: string[];
+      },
+    ]
+  >;
+};

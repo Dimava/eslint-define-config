@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow unreachable code after `return`, `throw`, `continue`, and `break` statements.
- *
- * @see [no-unreachable](https://eslint.org/docs/rules/no-unreachable)
- */
-export type NoUnreachableRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow unreachable code after `return`, `throw`, `continue`, and `break` statements.
- *
- * @see [no-unreachable](https://eslint.org/docs/rules/no-unreachable)
- */
-export interface NoUnreachableRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type NoUnreachableRule = {
   /**
    * Disallow unreachable code after `return`, `throw`, `continue`, and `break` statements.
    *
    * @see [no-unreachable](https://eslint.org/docs/rules/no-unreachable)
    */
-  'no-unreachable': NoUnreachableRuleConfig;
-}
+  'no-unreachable': Rule<[RuleLevel]>;
+};

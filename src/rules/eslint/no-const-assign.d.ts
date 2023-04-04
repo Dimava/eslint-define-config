@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow reassigning `const` variables.
- *
- * @see [no-const-assign](https://eslint.org/docs/rules/no-const-assign)
- */
-export type NoConstAssignRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow reassigning `const` variables.
- *
- * @see [no-const-assign](https://eslint.org/docs/rules/no-const-assign)
- */
-export interface NoConstAssignRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type NoConstAssignRule = {
   /**
    * Disallow reassigning `const` variables.
    *
    * @see [no-const-assign](https://eslint.org/docs/rules/no-const-assign)
    */
-  'no-const-assign': NoConstAssignRuleConfig;
-}
+  'no-const-assign': Rule<[RuleLevel]>;
+};

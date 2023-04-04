@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Require prop type to be a constructor.
- *
- * @see [require-prop-type-constructor](https://eslint.vuejs.org/rules/require-prop-type-constructor.html)
- */
-export type RequirePropTypeConstructorRuleConfig = RuleConfig<[]>;
-
-/**
- * Require prop type to be a constructor.
- *
- * @see [require-prop-type-constructor](https://eslint.vuejs.org/rules/require-prop-type-constructor.html)
- */
-export interface RequirePropTypeConstructorRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type RequirePropTypeConstructorRule = {
   /**
    * Require prop type to be a constructor.
    *
    * @see [require-prop-type-constructor](https://eslint.vuejs.org/rules/require-prop-type-constructor.html)
    */
-  'vue/require-prop-type-constructor': RequirePropTypeConstructorRuleConfig;
-}
+  'vue/require-prop-type-constructor': Rule<[RuleLevel]>;
+};

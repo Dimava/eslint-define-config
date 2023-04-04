@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow unreadable IIFEs.
- *
- * @see [no-unreadable-iife](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/no-unreadable-iife.md)
- */
-export type NoUnreadableIifeRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow unreadable IIFEs.
- *
- * @see [no-unreadable-iife](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/no-unreadable-iife.md)
- */
-export interface NoUnreadableIifeRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type NoUnreadableIifeRule = {
   /**
    * Disallow unreadable IIFEs.
    *
    * @see [no-unreadable-iife](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/no-unreadable-iife.md)
    */
-  'unicorn/no-unreadable-iife': NoUnreadableIifeRuleConfig;
-}
+  'unicorn/no-unreadable-iife': Rule<[RuleLevel]>;
+};

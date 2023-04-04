@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow Infinity.
- *
- * @see [no-infinity](https://ota-meshi.github.io/eslint-plugin-jsonc/rules/no-infinity.html)
- */
-export type NoInfinityRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow Infinity.
- *
- * @see [no-infinity](https://ota-meshi.github.io/eslint-plugin-jsonc/rules/no-infinity.html)
- */
-export interface NoInfinityRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type NoInfinityRule = {
   /**
    * Disallow Infinity.
    *
    * @see [no-infinity](https://ota-meshi.github.io/eslint-plugin-jsonc/rules/no-infinity.html)
    */
-  'jsonc/no-infinity': NoInfinityRuleConfig;
-}
+  'jsonc/no-infinity': Rule<[RuleLevel]>;
+};

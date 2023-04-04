@@ -1,33 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export type OperatorAssignmentOption = 'always' | 'never';
-
-/**
- * Options.
- */
-export type OperatorAssignmentOptions = [OperatorAssignmentOption?];
-
-/**
- * Require or disallow assignment operator shorthand where possible.
- *
- * @see [operator-assignment](https://eslint.org/docs/rules/operator-assignment)
- */
-export type OperatorAssignmentRuleConfig =
-  RuleConfig<OperatorAssignmentOptions>;
-
-/**
- * Require or disallow assignment operator shorthand where possible.
- *
- * @see [operator-assignment](https://eslint.org/docs/rules/operator-assignment)
- */
-export interface OperatorAssignmentRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type OperatorAssignmentRule = {
   /**
    * Require or disallow assignment operator shorthand where possible.
    *
    * @see [operator-assignment](https://eslint.org/docs/rules/operator-assignment)
    */
-  'operator-assignment': OperatorAssignmentRuleConfig;
-}
+  'operator-assignment': Rule<[RuleLevel, 'always' | 'never']>;
+};

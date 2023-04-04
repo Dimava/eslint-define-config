@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Forbid imported names marked with `@deprecated` documentation tag.
- *
- * @see [no-deprecated](https://github.com/import-js/eslint-plugin-import/blob/v2.27.5/docs/rules/no-deprecated.md)
- */
-export type NoDeprecatedRuleConfig = RuleConfig<[]>;
-
-/**
- * Forbid imported names marked with `@deprecated` documentation tag.
- *
- * @see [no-deprecated](https://github.com/import-js/eslint-plugin-import/blob/v2.27.5/docs/rules/no-deprecated.md)
- */
-export interface NoDeprecatedRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type NoDeprecatedRule = {
   /**
    * Forbid imported names marked with `@deprecated` documentation tag.
    *
    * @see [no-deprecated](https://github.com/import-js/eslint-plugin-import/blob/v2.27.5/docs/rules/no-deprecated.md)
    */
-  'import/no-deprecated': NoDeprecatedRuleConfig;
-}
+  'import/no-deprecated': Rule<[RuleLevel]>;
+};

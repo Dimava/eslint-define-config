@@ -1,34 +1,17 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export interface NoInlineCommentsOption {
-  ignorePattern?: string;
-}
-
-/**
- * Options.
- */
-export type NoInlineCommentsOptions = [NoInlineCommentsOption?];
-
-/**
- * Disallow inline comments after code.
- *
- * @see [no-inline-comments](https://eslint.org/docs/rules/no-inline-comments)
- */
-export type NoInlineCommentsRuleConfig = RuleConfig<NoInlineCommentsOptions>;
-
-/**
- * Disallow inline comments after code.
- *
- * @see [no-inline-comments](https://eslint.org/docs/rules/no-inline-comments)
- */
-export interface NoInlineCommentsRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type NoInlineCommentsRule = {
   /**
    * Disallow inline comments after code.
    *
    * @see [no-inline-comments](https://eslint.org/docs/rules/no-inline-comments)
    */
-  'no-inline-comments': NoInlineCommentsRuleConfig;
-}
+  'no-inline-comments': Rule<
+    [
+      RuleLevel,
+      {
+        ignorePattern?: string;
+      },
+    ]
+  >;
+};

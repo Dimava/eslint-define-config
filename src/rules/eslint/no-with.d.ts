@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow `with` statements.
- *
- * @see [no-with](https://eslint.org/docs/rules/no-with)
- */
-export type NoWithRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow `with` statements.
- *
- * @see [no-with](https://eslint.org/docs/rules/no-with)
- */
-export interface NoWithRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type NoWithRule = {
   /**
    * Disallow `with` statements.
    *
    * @see [no-with](https://eslint.org/docs/rules/no-with)
    */
-  'no-with': NoWithRuleConfig;
-}
+  'no-with': Rule<[RuleLevel]>;
+};

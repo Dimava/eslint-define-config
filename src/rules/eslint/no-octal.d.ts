@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow octal literals.
- *
- * @see [no-octal](https://eslint.org/docs/rules/no-octal)
- */
-export type NoOctalRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow octal literals.
- *
- * @see [no-octal](https://eslint.org/docs/rules/no-octal)
- */
-export interface NoOctalRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type NoOctalRule = {
   /**
    * Disallow octal literals.
    *
    * @see [no-octal](https://eslint.org/docs/rules/no-octal)
    */
-  'no-octal': NoOctalRuleConfig;
-}
+  'no-octal': Rule<[RuleLevel]>;
+};

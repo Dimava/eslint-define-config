@@ -1,34 +1,17 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export interface DefineMacrosOrderOption {
-  order?: ('defineEmits' | 'defineProps')[];
-}
-
-/**
- * Options.
- */
-export type DefineMacrosOrderOptions = [DefineMacrosOrderOption?];
-
-/**
- * Enforce order of `defineEmits` and `defineProps` compiler macros.
- *
- * @see [define-macros-order](https://eslint.vuejs.org/rules/define-macros-order.html)
- */
-export type DefineMacrosOrderRuleConfig = RuleConfig<DefineMacrosOrderOptions>;
-
-/**
- * Enforce order of `defineEmits` and `defineProps` compiler macros.
- *
- * @see [define-macros-order](https://eslint.vuejs.org/rules/define-macros-order.html)
- */
-export interface DefineMacrosOrderRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type DefineMacrosOrderRule = {
   /**
    * Enforce order of `defineEmits` and `defineProps` compiler macros.
    *
    * @see [define-macros-order](https://eslint.vuejs.org/rules/define-macros-order.html)
    */
-  'vue/define-macros-order': DefineMacrosOrderRuleConfig;
-}
+  'vue/define-macros-order': Rule<
+    [
+      RuleLevel,
+      {
+        order?: ('defineEmits' | 'defineProps')[];
+      },
+    ]
+  >;
+};

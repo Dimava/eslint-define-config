@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow `// tslint:<rule-flag>` comments.
- *
- * @see [ban-tslint-comment](https://typescript-eslint.io/rules/ban-tslint-comment)
- */
-export type BanTslintCommentRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow `// tslint:<rule-flag>` comments.
- *
- * @see [ban-tslint-comment](https://typescript-eslint.io/rules/ban-tslint-comment)
- */
-export interface BanTslintCommentRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type BanTslintCommentRule = {
   /**
    * Disallow `// tslint:<rule-flag>` comments.
    *
    * @see [ban-tslint-comment](https://typescript-eslint.io/rules/ban-tslint-comment)
    */
-  '@typescript-eslint/ban-tslint-comment': BanTslintCommentRuleConfig;
-}
+  '@typescript-eslint/ban-tslint-comment': Rule<[RuleLevel]>;
+};

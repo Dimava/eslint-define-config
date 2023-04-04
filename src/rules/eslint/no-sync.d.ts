@@ -1,34 +1,6 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export interface NoSyncOption {
-  allowAtRootLevel?: boolean;
-}
-
-/**
- * Options.
- */
-export type NoSyncOptions = [NoSyncOption?];
-
-/**
- * Disallow synchronous methods.
- *
- * @deprecated
- *
- * @see [no-sync](https://eslint.org/docs/rules/no-sync)
- */
-export type NoSyncRuleConfig = RuleConfig<NoSyncOptions>;
-
-/**
- * Disallow synchronous methods.
- *
- * @deprecated
- *
- * @see [no-sync](https://eslint.org/docs/rules/no-sync)
- */
-export interface NoSyncRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type NoSyncRule = {
   /**
    * Disallow synchronous methods.
    *
@@ -36,5 +8,12 @@ export interface NoSyncRule {
    *
    * @see [no-sync](https://eslint.org/docs/rules/no-sync)
    */
-  'no-sync': NoSyncRuleConfig;
-}
+  'no-sync': Rule<
+    [
+      RuleLevel,
+      {
+        allowAtRootLevel?: boolean;
+      },
+    ]
+  >;
+};

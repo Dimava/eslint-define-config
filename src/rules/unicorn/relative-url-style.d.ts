@@ -1,32 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export type RelativeUrlStyleOption = 'never' | 'always';
-
-/**
- * Options.
- */
-export type RelativeUrlStyleOptions = [RelativeUrlStyleOption?];
-
-/**
- * Enforce consistent relative URL style.
- *
- * @see [relative-url-style](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/relative-url-style.md)
- */
-export type RelativeUrlStyleRuleConfig = RuleConfig<RelativeUrlStyleOptions>;
-
-/**
- * Enforce consistent relative URL style.
- *
- * @see [relative-url-style](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/relative-url-style.md)
- */
-export interface RelativeUrlStyleRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type RelativeUrlStyleRule = {
   /**
    * Enforce consistent relative URL style.
    *
    * @see [relative-url-style](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/relative-url-style.md)
    */
-  'unicorn/relative-url-style': RelativeUrlStyleRuleConfig;
-}
+  'unicorn/relative-url-style': Rule<[RuleLevel, 'never' | 'always']>;
+};

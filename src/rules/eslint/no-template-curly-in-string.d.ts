@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow template literal placeholder syntax in regular strings.
- *
- * @see [no-template-curly-in-string](https://eslint.org/docs/rules/no-template-curly-in-string)
- */
-export type NoTemplateCurlyInStringRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow template literal placeholder syntax in regular strings.
- *
- * @see [no-template-curly-in-string](https://eslint.org/docs/rules/no-template-curly-in-string)
- */
-export interface NoTemplateCurlyInStringRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type NoTemplateCurlyInStringRule = {
   /**
    * Disallow template literal placeholder syntax in regular strings.
    *
    * @see [no-template-curly-in-string](https://eslint.org/docs/rules/no-template-curly-in-string)
    */
-  'no-template-curly-in-string': NoTemplateCurlyInStringRuleConfig;
-}
+  'no-template-curly-in-string': Rule<[RuleLevel]>;
+};

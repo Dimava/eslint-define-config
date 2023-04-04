@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Require `new` when throwing an error.
- *
- * @see [throw-new-error](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/throw-new-error.md)
- */
-export type ThrowNewErrorRuleConfig = RuleConfig<[]>;
-
-/**
- * Require `new` when throwing an error.
- *
- * @see [throw-new-error](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/throw-new-error.md)
- */
-export interface ThrowNewErrorRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type ThrowNewErrorRule = {
   /**
    * Require `new` when throwing an error.
    *
    * @see [throw-new-error](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/throw-new-error.md)
    */
-  'unicorn/throw-new-error': ThrowNewErrorRuleConfig;
-}
+  'unicorn/throw-new-error': Rule<[RuleLevel]>;
+};

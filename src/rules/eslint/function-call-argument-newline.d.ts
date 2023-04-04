@@ -1,38 +1,12 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export type FunctionCallArgumentNewlineOption =
-  | 'always'
-  | 'never'
-  | 'consistent';
-
-/**
- * Options.
- */
-export type FunctionCallArgumentNewlineOptions = [
-  FunctionCallArgumentNewlineOption?,
-];
-
-/**
- * Enforce line breaks between arguments of a function call.
- *
- * @see [function-call-argument-newline](https://eslint.org/docs/rules/function-call-argument-newline)
- */
-export type FunctionCallArgumentNewlineRuleConfig =
-  RuleConfig<FunctionCallArgumentNewlineOptions>;
-
-/**
- * Enforce line breaks between arguments of a function call.
- *
- * @see [function-call-argument-newline](https://eslint.org/docs/rules/function-call-argument-newline)
- */
-export interface FunctionCallArgumentNewlineRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type FunctionCallArgumentNewlineRule = {
   /**
    * Enforce line breaks between arguments of a function call.
    *
    * @see [function-call-argument-newline](https://eslint.org/docs/rules/function-call-argument-newline)
    */
-  'function-call-argument-newline': FunctionCallArgumentNewlineRuleConfig;
-}
+  'function-call-argument-newline': Rule<
+    [RuleLevel, 'always' | 'never' | 'consistent']
+  >;
+};

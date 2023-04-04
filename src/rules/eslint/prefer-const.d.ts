@@ -1,35 +1,18 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export interface PreferConstOption {
-  destructuring?: 'any' | 'all';
-  ignoreReadBeforeAssign?: boolean;
-}
-
-/**
- * Options.
- */
-export type PreferConstOptions = [PreferConstOption?];
-
-/**
- * Require `const` declarations for variables that are never reassigned after declared.
- *
- * @see [prefer-const](https://eslint.org/docs/rules/prefer-const)
- */
-export type PreferConstRuleConfig = RuleConfig<PreferConstOptions>;
-
-/**
- * Require `const` declarations for variables that are never reassigned after declared.
- *
- * @see [prefer-const](https://eslint.org/docs/rules/prefer-const)
- */
-export interface PreferConstRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type PreferConstRule = {
   /**
    * Require `const` declarations for variables that are never reassigned after declared.
    *
    * @see [prefer-const](https://eslint.org/docs/rules/prefer-const)
    */
-  'prefer-const': PreferConstRuleConfig;
-}
+  'prefer-const': Rule<
+    [
+      RuleLevel,
+      {
+        destructuring?: 'any' | 'all';
+        ignoreReadBeforeAssign?: boolean;
+      },
+    ]
+  >;
+};

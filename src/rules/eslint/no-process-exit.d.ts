@@ -1,22 +1,6 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow the use of `process.exit()`.
- *
- * @deprecated
- *
- * @see [no-process-exit](https://eslint.org/docs/rules/no-process-exit)
- */
-export type NoProcessExitRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow the use of `process.exit()`.
- *
- * @deprecated
- *
- * @see [no-process-exit](https://eslint.org/docs/rules/no-process-exit)
- */
-export interface NoProcessExitRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type NoProcessExitRule = {
   /**
    * Disallow the use of `process.exit()`.
    *
@@ -24,5 +8,5 @@ export interface NoProcessExitRule {
    *
    * @see [no-process-exit](https://eslint.org/docs/rules/no-process-exit)
    */
-  'no-process-exit': NoProcessExitRuleConfig;
-}
+  'no-process-exit': Rule<[RuleLevel]>;
+};

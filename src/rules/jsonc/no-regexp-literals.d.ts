@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow RegExp literals.
- *
- * @see [no-regexp-literals](https://ota-meshi.github.io/eslint-plugin-jsonc/rules/no-regexp-literals.html)
- */
-export type NoRegexpLiteralsRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow RegExp literals.
- *
- * @see [no-regexp-literals](https://ota-meshi.github.io/eslint-plugin-jsonc/rules/no-regexp-literals.html)
- */
-export interface NoRegexpLiteralsRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type NoRegexpLiteralsRule = {
   /**
    * Disallow RegExp literals.
    *
    * @see [no-regexp-literals](https://ota-meshi.github.io/eslint-plugin-jsonc/rules/no-regexp-literals.html)
    */
-  'jsonc/no-regexp-literals': NoRegexpLiteralsRuleConfig;
-}
+  'jsonc/no-regexp-literals': Rule<[RuleLevel]>;
+};

@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Require declare public properties using `expose`.
- *
- * @see [require-expose](https://eslint.vuejs.org/rules/require-expose.html)
- */
-export type RequireExposeRuleConfig = RuleConfig<[]>;
-
-/**
- * Require declare public properties using `expose`.
- *
- * @see [require-expose](https://eslint.vuejs.org/rules/require-expose.html)
- */
-export interface RequireExposeRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type RequireExposeRule = {
   /**
    * Require declare public properties using `expose`.
    *
    * @see [require-expose](https://eslint.vuejs.org/rules/require-expose.html)
    */
-  'vue/require-expose': RequireExposeRuleConfig;
-}
+  'vue/require-expose': Rule<[RuleLevel]>;
+};

@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow redundant return statements.
- *
- * @see [no-useless-return](https://eslint.org/docs/rules/no-useless-return)
- */
-export type NoUselessReturnRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow redundant return statements.
- *
- * @see [no-useless-return](https://eslint.org/docs/rules/no-useless-return)
- */
-export interface NoUselessReturnRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type NoUselessReturnRule = {
   /**
    * Disallow redundant return statements.
    *
    * @see [no-useless-return](https://eslint.org/docs/rules/no-useless-return)
    */
-  'no-useless-return': NoUselessReturnRuleConfig;
-}
+  'no-useless-return': Rule<[RuleLevel]>;
+};

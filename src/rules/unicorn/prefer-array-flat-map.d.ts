@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Prefer `.flatMap(…)` over `.map(…).flat()`.
- *
- * @see [prefer-array-flat-map](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/prefer-array-flat-map.md)
- */
-export type PreferArrayFlatMapRuleConfig = RuleConfig<[]>;
-
-/**
- * Prefer `.flatMap(…)` over `.map(…).flat()`.
- *
- * @see [prefer-array-flat-map](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/prefer-array-flat-map.md)
- */
-export interface PreferArrayFlatMapRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type PreferArrayFlatMapRule = {
   /**
    * Prefer `.flatMap(…)` over `.map(…).flat()`.
    *
    * @see [prefer-array-flat-map](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/prefer-array-flat-map.md)
    */
-  'unicorn/prefer-array-flat-map': PreferArrayFlatMapRuleConfig;
-}
+  'unicorn/prefer-array-flat-map': Rule<[RuleLevel]>;
+};

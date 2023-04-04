@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow unnecessary labels.
- *
- * @see [no-extra-label](https://eslint.org/docs/rules/no-extra-label)
- */
-export type NoExtraLabelRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow unnecessary labels.
- *
- * @see [no-extra-label](https://eslint.org/docs/rules/no-extra-label)
- */
-export interface NoExtraLabelRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type NoExtraLabelRule = {
   /**
    * Disallow unnecessary labels.
    *
    * @see [no-extra-label](https://eslint.org/docs/rules/no-extra-label)
    */
-  'no-extra-label': NoExtraLabelRuleConfig;
-}
+  'no-extra-label': Rule<[RuleLevel]>;
+};

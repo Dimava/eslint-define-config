@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Enforce valid `defineEmits` compiler macro.
- *
- * @see [valid-define-emits](https://eslint.vuejs.org/rules/valid-define-emits.html)
- */
-export type ValidDefineEmitsRuleConfig = RuleConfig<[]>;
-
-/**
- * Enforce valid `defineEmits` compiler macro.
- *
- * @see [valid-define-emits](https://eslint.vuejs.org/rules/valid-define-emits.html)
- */
-export interface ValidDefineEmitsRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type ValidDefineEmitsRule = {
   /**
    * Enforce valid `defineEmits` compiler macro.
    *
    * @see [valid-define-emits](https://eslint.vuejs.org/rules/valid-define-emits.html)
    */
-  'vue/valid-define-emits': ValidDefineEmitsRuleConfig;
-}
+  'vue/valid-define-emits': Rule<[RuleLevel]>;
+};

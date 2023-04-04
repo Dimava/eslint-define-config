@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow labels that share a name with a variable.
- *
- * @see [no-label-var](https://eslint.org/docs/rules/no-label-var)
- */
-export type NoLabelVarRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow labels that share a name with a variable.
- *
- * @see [no-label-var](https://eslint.org/docs/rules/no-label-var)
- */
-export interface NoLabelVarRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type NoLabelVarRule = {
   /**
    * Disallow labels that share a name with a variable.
    *
    * @see [no-label-var](https://eslint.org/docs/rules/no-label-var)
    */
-  'no-label-var': NoLabelVarRuleConfig;
-}
+  'no-label-var': Rule<[RuleLevel]>;
+};

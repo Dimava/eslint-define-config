@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Require generator functions to contain `yield`.
- *
- * @see [require-yield](https://eslint.org/docs/rules/require-yield)
- */
-export type RequireYieldRuleConfig = RuleConfig<[]>;
-
-/**
- * Require generator functions to contain `yield`.
- *
- * @see [require-yield](https://eslint.org/docs/rules/require-yield)
- */
-export interface RequireYieldRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type RequireYieldRule = {
   /**
    * Require generator functions to contain `yield`.
    *
    * @see [require-yield](https://eslint.org/docs/rules/require-yield)
    */
-  'require-yield': RequireYieldRuleConfig;
-}
+  'require-yield': Rule<[RuleLevel]>;
+};

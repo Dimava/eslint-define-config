@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow unnecessary namespace qualifiers.
- *
- * @see [no-unnecessary-qualifier](https://typescript-eslint.io/rules/no-unnecessary-qualifier)
- */
-export type NoUnnecessaryQualifierRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow unnecessary namespace qualifiers.
- *
- * @see [no-unnecessary-qualifier](https://typescript-eslint.io/rules/no-unnecessary-qualifier)
- */
-export interface NoUnnecessaryQualifierRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type NoUnnecessaryQualifierRule = {
   /**
    * Disallow unnecessary namespace qualifiers.
    *
    * @see [no-unnecessary-qualifier](https://typescript-eslint.io/rules/no-unnecessary-qualifier)
    */
-  '@typescript-eslint/no-unnecessary-qualifier': NoUnnecessaryQualifierRuleConfig;
-}
+  '@typescript-eslint/no-unnecessary-qualifier': Rule<[RuleLevel]>;
+};

@@ -1,22 +1,6 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow string concatenation with `__dirname` and `__filename`.
- *
- * @deprecated
- *
- * @see [no-path-concat](https://eslint.org/docs/rules/no-path-concat)
- */
-export type NoPathConcatRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow string concatenation with `__dirname` and `__filename`.
- *
- * @deprecated
- *
- * @see [no-path-concat](https://eslint.org/docs/rules/no-path-concat)
- */
-export interface NoPathConcatRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type NoPathConcatRule = {
   /**
    * Disallow string concatenation with `__dirname` and `__filename`.
    *
@@ -24,5 +8,5 @@ export interface NoPathConcatRule {
    *
    * @see [no-path-concat](https://eslint.org/docs/rules/no-path-concat)
    */
-  'no-path-concat': NoPathConcatRuleConfig;
-}
+  'no-path-concat': Rule<[RuleLevel]>;
+};

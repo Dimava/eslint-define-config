@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow the assignment to `exports`.
- *
- * @see [no-exports-assign](https://github.com/mysticatea/eslint-plugin-node/blob/v11.1.0/docs/rules/no-exports-assign.md)
- */
-export type NoExportsAssignRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow the assignment to `exports`.
- *
- * @see [no-exports-assign](https://github.com/mysticatea/eslint-plugin-node/blob/v11.1.0/docs/rules/no-exports-assign.md)
- */
-export interface NoExportsAssignRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type NoExportsAssignRule = {
   /**
    * Disallow the assignment to `exports`.
    *
    * @see [no-exports-assign](https://github.com/mysticatea/eslint-plugin-node/blob/v11.1.0/docs/rules/no-exports-assign.md)
    */
-  'node/no-exports-assign': NoExportsAssignRuleConfig;
-}
+  'node/no-exports-assign': Rule<[RuleLevel]>;
+};

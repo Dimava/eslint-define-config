@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow multiple spaces in regular expressions.
- *
- * @see [no-regex-spaces](https://eslint.org/docs/rules/no-regex-spaces)
- */
-export type NoRegexSpacesRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow multiple spaces in regular expressions.
- *
- * @see [no-regex-spaces](https://eslint.org/docs/rules/no-regex-spaces)
- */
-export interface NoRegexSpacesRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type NoRegexSpacesRule = {
   /**
    * Disallow multiple spaces in regular expressions.
    *
    * @see [no-regex-spaces](https://eslint.org/docs/rules/no-regex-spaces)
    */
-  'no-regex-spaces': NoRegexSpacesRuleConfig;
-}
+  'no-regex-spaces': Rule<[RuleLevel]>;
+};

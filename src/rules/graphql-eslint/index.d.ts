@@ -12,7 +12,6 @@ import type { LoneAnonymousOperationRule } from './lone-anonymous-operation';
 import type { LoneExecutableDefinitionRule } from './lone-executable-definition';
 import type { LoneSchemaDefinitionRule } from './lone-schema-definition';
 import type { MatchDocumentFilenameRule } from './match-document-filename';
-import type { NamingConventionRule } from './naming-convention';
 import type { NoAnonymousOperationsRule } from './no-anonymous-operations';
 import type { NoCaseInsensitiveEnumValuesDuplicatesRule } from './no-case-insensitive-enum-values-duplicates';
 import type { NoDeprecatedRule } from './no-deprecated';
@@ -102,7 +101,6 @@ export type GraphQLRules = ExecutableDefinitionsRule &
   InputNameRule &
   LoneExecutableDefinitionRule &
   MatchDocumentFilenameRule &
-  NamingConventionRule &
   NoAnonymousOperationsRule &
   NoCaseInsensitiveEnumValuesDuplicatesRule &
   NoDeprecatedRule &

@@ -1,42 +1,21 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Config.
- */
-export interface SortKeysConfig {
-  caseSensitive?: boolean;
-  natural?: boolean;
-  minKeys?: number;
-  allowLineSeparatedGroups?: boolean;
-}
-
-/**
- * Option.
- */
-export type SortKeysOption = 'asc' | 'desc';
-
-/**
- * Options.
- */
-export type SortKeysOptions = [SortKeysOption?, SortKeysConfig?];
-
-/**
- * Require object keys to be sorted.
- *
- * @see [sort-keys](https://eslint.org/docs/rules/sort-keys)
- */
-export type SortKeysRuleConfig = RuleConfig<SortKeysOptions>;
-
-/**
- * Require object keys to be sorted.
- *
- * @see [sort-keys](https://eslint.org/docs/rules/sort-keys)
- */
-export interface SortKeysRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type SortKeysRule = {
   /**
    * Require object keys to be sorted.
    *
    * @see [sort-keys](https://eslint.org/docs/rules/sort-keys)
    */
-  'sort-keys': SortKeysRuleConfig;
-}
+  'sort-keys': Rule<
+    [
+      RuleLevel,
+      'asc' | 'desc',
+      {
+        caseSensitive?: boolean;
+        natural?: boolean;
+        minKeys?: number;
+        allowLineSeparatedGroups?: boolean;
+      },
+    ]
+  >;
+};

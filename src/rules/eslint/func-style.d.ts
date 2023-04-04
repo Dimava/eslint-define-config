@@ -1,39 +1,18 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Config.
- */
-export interface FuncStyleConfig {
-  allowArrowFunctions?: boolean;
-}
-
-/**
- * Option.
- */
-export type FuncStyleOption = 'declaration' | 'expression';
-
-/**
- * Options.
- */
-export type FuncStyleOptions = [FuncStyleOption?, FuncStyleConfig?];
-
-/**
- * Enforce the consistent use of either `function` declarations or expressions.
- *
- * @see [func-style](https://eslint.org/docs/rules/func-style)
- */
-export type FuncStyleRuleConfig = RuleConfig<FuncStyleOptions>;
-
-/**
- * Enforce the consistent use of either `function` declarations or expressions.
- *
- * @see [func-style](https://eslint.org/docs/rules/func-style)
- */
-export interface FuncStyleRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type FuncStyleRule = {
   /**
    * Enforce the consistent use of either `function` declarations or expressions.
    *
    * @see [func-style](https://eslint.org/docs/rules/func-style)
    */
-  'func-style': FuncStyleRuleConfig;
-}
+  'func-style': Rule<
+    [
+      RuleLevel,
+      'declaration' | 'expression',
+      {
+        allowArrowFunctions?: boolean;
+      },
+    ]
+  >;
+};

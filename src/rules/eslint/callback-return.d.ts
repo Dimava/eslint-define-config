@@ -1,32 +1,6 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export type CallbackReturnOption = string[];
-
-/**
- * Options.
- */
-export type CallbackReturnOptions = [CallbackReturnOption?];
-
-/**
- * Require `return` statements after callbacks.
- *
- * @deprecated
- *
- * @see [callback-return](https://eslint.org/docs/rules/callback-return)
- */
-export type CallbackReturnRuleConfig = RuleConfig<CallbackReturnOptions>;
-
-/**
- * Require `return` statements after callbacks.
- *
- * @deprecated
- *
- * @see [callback-return](https://eslint.org/docs/rules/callback-return)
- */
-export interface CallbackReturnRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type CallbackReturnRule = {
   /**
    * Require `return` statements after callbacks.
    *
@@ -34,5 +8,5 @@ export interface CallbackReturnRule {
    *
    * @see [callback-return](https://eslint.org/docs/rules/callback-return)
    */
-  'callback-return': CallbackReturnRuleConfig;
-}
+  'callback-return': Rule<[RuleLevel, string[]]>;
+};

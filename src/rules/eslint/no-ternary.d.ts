@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow ternary operators.
- *
- * @see [no-ternary](https://eslint.org/docs/rules/no-ternary)
- */
-export type NoTernaryRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow ternary operators.
- *
- * @see [no-ternary](https://eslint.org/docs/rules/no-ternary)
- */
-export interface NoTernaryRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type NoTernaryRule = {
   /**
    * Disallow ternary operators.
    *
    * @see [no-ternary](https://eslint.org/docs/rules/no-ternary)
    */
-  'no-ternary': NoTernaryRuleConfig;
-}
+  'no-ternary': Rule<[RuleLevel]>;
+};

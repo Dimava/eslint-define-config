@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Enforce valid `v-bind` directives.
- *
- * @see [valid-v-bind](https://eslint.vuejs.org/rules/valid-v-bind.html)
- */
-export type ValidVBindRuleConfig = RuleConfig<[]>;
-
-/**
- * Enforce valid `v-bind` directives.
- *
- * @see [valid-v-bind](https://eslint.vuejs.org/rules/valid-v-bind.html)
- */
-export interface ValidVBindRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type ValidVBindRule = {
   /**
    * Enforce valid `v-bind` directives.
    *
    * @see [valid-v-bind](https://eslint.vuejs.org/rules/valid-v-bind.html)
    */
-  'vue/valid-v-bind': ValidVBindRuleConfig;
-}
+  'vue/valid-v-bind': Rule<[RuleLevel]>;
+};

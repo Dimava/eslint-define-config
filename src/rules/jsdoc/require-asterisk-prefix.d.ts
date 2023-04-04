@@ -1,42 +1,21 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Config.
- */
-export interface RequireAsteriskPrefixConfig {
-  tags?: {
-    always?: string[];
-    any?: string[];
-    never?: string[];
-    [k: string]: any;
-  };
-}
-
-/**
- * Option.
- */
-export type RequireAsteriskPrefixOption = 'always' | 'never' | 'any';
-
-/**
- * Options.
- */
-export type RequireAsteriskPrefixOptions = [
-  RequireAsteriskPrefixOption?,
-  RequireAsteriskPrefixConfig?,
-];
-
-/**
- *
- */
-export type RequireAsteriskPrefixRuleConfig =
-  RuleConfig<RequireAsteriskPrefixOptions>;
-
-/**
- *
- */
-export interface RequireAsteriskPrefixRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type RequireAsteriskPrefixRule = {
   /**
    *
    */
-  'jsdoc/require-asterisk-prefix': RequireAsteriskPrefixRuleConfig;
-}
+  'jsdoc/require-asterisk-prefix': Rule<
+    [
+      RuleLevel,
+      'always' | 'never' | 'any',
+      {
+        tags?: {
+          always?: string[];
+          any?: string[];
+          never?: string[];
+          [k: string]: any;
+        };
+      },
+    ]
+  >;
+};

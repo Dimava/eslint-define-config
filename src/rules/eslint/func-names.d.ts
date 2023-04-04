@@ -1,41 +1,25 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export type FuncNamesOption =
-  | []
-  | [Value]
-  | [
-      Value,
-      {
-        generators?: Value;
-      },
-    ];
-export type Value = 'always' | 'as-needed' | 'never';
-
-/**
- * Options.
- */
-export type FuncNamesOptions = FuncNamesOption;
-
-/**
- * Require or disallow named `function` expressions.
- *
- * @see [func-names](https://eslint.org/docs/rules/func-names)
- */
-export type FuncNamesRuleConfig = RuleConfig<FuncNamesOptions>;
-
-/**
- * Require or disallow named `function` expressions.
- *
- * @see [func-names](https://eslint.org/docs/rules/func-names)
- */
-export interface FuncNamesRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type FuncNamesRule = {
   /**
    * Require or disallow named `function` expressions.
    *
    * @see [func-names](https://eslint.org/docs/rules/func-names)
    */
-  'func-names': FuncNamesRuleConfig;
-}
+  'func-names': Rule<
+    [
+      RuleLevel,
+      (
+        | []
+        | [Value]
+        | [
+            Value,
+            {
+              generators?: Value;
+            },
+          ]
+      ),
+    ]
+  >;
+};
+type Value = 'always' | 'as-needed' | 'never';

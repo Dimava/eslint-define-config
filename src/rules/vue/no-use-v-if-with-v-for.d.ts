@@ -1,34 +1,17 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export interface NoUseVIfWithVForOption {
-  allowUsingIterationVar?: boolean;
-}
-
-/**
- * Options.
- */
-export type NoUseVIfWithVForOptions = [NoUseVIfWithVForOption?];
-
-/**
- * Disallow use v-if on the same element as v-for.
- *
- * @see [no-use-v-if-with-v-for](https://eslint.vuejs.org/rules/no-use-v-if-with-v-for.html)
- */
-export type NoUseVIfWithVForRuleConfig = RuleConfig<NoUseVIfWithVForOptions>;
-
-/**
- * Disallow use v-if on the same element as v-for.
- *
- * @see [no-use-v-if-with-v-for](https://eslint.vuejs.org/rules/no-use-v-if-with-v-for.html)
- */
-export interface NoUseVIfWithVForRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type NoUseVIfWithVForRule = {
   /**
    * Disallow use v-if on the same element as v-for.
    *
    * @see [no-use-v-if-with-v-for](https://eslint.vuejs.org/rules/no-use-v-if-with-v-for.html)
    */
-  'vue/no-use-v-if-with-v-for': NoUseVIfWithVForRuleConfig;
-}
+  'vue/no-use-v-if-with-v-for': Rule<
+    [
+      RuleLevel,
+      {
+        allowUsingIterationVar?: boolean;
+      },
+    ]
+  >;
+};

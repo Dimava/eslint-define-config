@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Prefer `RegExp#test()` over `String#match()` and `RegExp#exec()`.
- *
- * @see [prefer-regexp-test](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/prefer-regexp-test.md)
- */
-export type PreferRegexpTestRuleConfig = RuleConfig<[]>;
-
-/**
- * Prefer `RegExp#test()` over `String#match()` and `RegExp#exec()`.
- *
- * @see [prefer-regexp-test](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/prefer-regexp-test.md)
- */
-export interface PreferRegexpTestRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type PreferRegexpTestRule = {
   /**
    * Prefer `RegExp#test()` over `String#match()` and `RegExp#exec()`.
    *
    * @see [prefer-regexp-test](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/prefer-regexp-test.md)
    */
-  'unicorn/prefer-regexp-test': PreferRegexpTestRuleConfig;
-}
+  'unicorn/prefer-regexp-test': Rule<[RuleLevel]>;
+};

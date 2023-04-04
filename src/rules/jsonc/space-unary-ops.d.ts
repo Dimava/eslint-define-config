@@ -1,38 +1,21 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export interface SpaceUnaryOpsOption {
-  words?: boolean;
-  nonwords?: boolean;
-  overrides?: {
-    [k: string]: boolean;
-  };
-}
-
-/**
- * Options.
- */
-export type SpaceUnaryOpsOptions = [SpaceUnaryOpsOption?];
-
-/**
- * Disallow spaces after unary operators.
- *
- * @see [space-unary-ops](https://ota-meshi.github.io/eslint-plugin-jsonc/rules/space-unary-ops.html)
- */
-export type SpaceUnaryOpsRuleConfig = RuleConfig<SpaceUnaryOpsOptions>;
-
-/**
- * Disallow spaces after unary operators.
- *
- * @see [space-unary-ops](https://ota-meshi.github.io/eslint-plugin-jsonc/rules/space-unary-ops.html)
- */
-export interface SpaceUnaryOpsRule {
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
+export type SpaceUnaryOpsRule = {
   /**
    * Disallow spaces after unary operators.
    *
    * @see [space-unary-ops](https://ota-meshi.github.io/eslint-plugin-jsonc/rules/space-unary-ops.html)
    */
-  'jsonc/space-unary-ops': SpaceUnaryOpsRuleConfig;
-}
+  'jsonc/space-unary-ops': Rule<
+    [
+      RuleLevel,
+      {
+        words?: boolean;
+        nonwords?: boolean;
+        overrides?: {
+          [k: string]: boolean;
+        };
+      },
+    ]
+  >;
+};
