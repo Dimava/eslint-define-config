@@ -1,0 +1,24 @@
+diff --git "a/src\\rules\\unicorn\\import-index.d.ts" "b/src\\rules\\unicorn\\import-index.error.d.ts"
+index c7f2d3b..f190b7e 100644
+--- "a/src\\rules\\unicorn\\import-index.d.ts"
++++ "b/src\\rules\\unicorn\\import-index.error.d.ts"
+@@ -5,7 +5,17 @@ export type ImportIndexRule = {
+    *
+    * @deprecated
+    *
+-   * @see [import-index](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/deprecated-rules.md#import-index)
++   * @see [import-index](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v42.0.0/docs/rules/import-index.md)
+    */
+-  'unicorn/import-index': Rule<[RuleLevel]>;
++  'unicorn/import-index': Rule<
++    [
++      RuleLevel,
++      {
++        /**
++         * @deprecated
++         */
++        ignoreImports?: boolean;
++      },
++    ]
++  >;
+ };
