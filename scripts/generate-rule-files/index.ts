@@ -110,6 +110,7 @@ async function generateRulesFiles(
       ruleFile.writeGeneratedContent();
       ruleFile.applyPatch();
     } catch (err) {
+      ruleFile.writeGeneratedContent();
       ruleFile.writeGeneratedError(err as Error);
       logger.logUpdate(
         logger.colors.red(
