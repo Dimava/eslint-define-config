@@ -13,7 +13,8 @@
     "test": "vitest",
     "coverage": "vitest run --coverage",
     "prepublishOnly": "pnpm run clean && pnpm install && pnpm run check",
-    "generate:rules": "tsx ./scripts/generate-rule-files/cli.ts"
+    "generate:rules": "tsx ./scripts/generate-rule-files/cli.ts",
+    "regenerate:rules": "del-cli ./src/rules/*/ && pnpm run generate:rules && pnpm run format && pnpm run lint && pnpm run typecheck --run"
   },
   "keywords": [
     "config",
@@ -61,6 +62,7 @@
     "@typescript-eslint/eslint-plugin": "~5.57.0",
     "@typescript-eslint/parser": "~5.57.0",
     "change-case": "~4.1.2",
+    "del-cli": "^5.0.0",
     "eslint": "~8.37.0",
     "eslint-config-prettier": "~8.8.0",
     "eslint-gitignore": "~0.1.0",
