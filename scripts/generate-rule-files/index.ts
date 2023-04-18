@@ -170,6 +170,8 @@ export async function run(options: RunOptions = {}): Promise<void> {
     }
 
     logger.info(`Generating ${plugin.name} rules.`);
+    logger.logUpdate(logger.colors.yellow('  Loading plugin > Prettier'));
+    format('');
     logger.logUpdate(
       logger.colors.yellow(`  Loading plugin > ${plugin.module}`),
     );
