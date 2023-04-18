@@ -12,6 +12,7 @@
     "coverage": "vitest run --coverage",
     "generate:rules": "tsx ./scripts/generate-rule-files/cli.ts",
     "prepublishOnly": "pnpm run clean && pnpm install && pnpm run build",
+    "generate:diffs": "tsx ./scripts/generate-diffs.ts",
     "preflight": "pnpm install && run-s format lint build test typecheck"
   },
   "type": "module",
