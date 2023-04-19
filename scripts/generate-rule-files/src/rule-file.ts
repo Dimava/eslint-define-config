@@ -227,6 +227,7 @@ export class RuleFile {
   public errorFilePath(): string {
     return this.rulePath.replace(/.d.ts$/, '.error.d.ts');
   }
+
   /**
    * Must be called after `generate()` to write the file.
    */
@@ -235,6 +236,7 @@ export class RuleFile {
 
     writeFileSync(this.rulePath, this.content);
   }
+
   /**
    * Must be called after `generate()` to write the error.
    */
