@@ -97,6 +97,7 @@ function printGenerationReport(
 async function generateRulesFiles(
   plugin: Plugin,
   pluginDirectory: string,
+  debuggedRules?: string[],
 ): Promise<{ failedRules: FailedRule[] }> {
   const failedRules: FailedRule[] = [];
 
@@ -115,19 +116,25 @@ async function generateRulesFiles(
       ruleName,
       rule,
     );
-    logger.logUpdate(
-      logger.colors.yellow(`  Generating > ${ruleFile.prefixedRuleName()}`),
-    );
+    const prefixedName: string = ruleFile.prefixedRuleName();
+
+    logger.logUpdate(logger.colors.yellow(`  Generating > ${prefixedName}`));
     try {
       await ruleFile.generate();
       ruleFile.writeGeneratedContent();
       ruleFile.applyPatch();
+
+      if (debuggedRules?.some((target) => prefixedName.includes(target))) {
+        logger.logUpdate(
+          `  🐞 Debugging ${ruleName}: see ${ruleFile.errorFilePath()}`,
+        );
+        logger.logUpdatePersist();
+        ruleFile.writeGeneratedError(new Error('The rule is being debugged'));
+      }
     } catch (err) {
       ruleFile.writeGeneratedError(err as Error);
       logger.logUpdate(
-        logger.colors.red(
-          `     ❌ Failed to generate ${ruleFile.prefixedRuleName()}`,
-        ),
+        logger.colors.red(`     ❌ Failed to generate ${prefixedName}`),
       );
       logger.logUpdatePersist();
       failedRules.push({ ruleName, err });
@@ -164,6 +171,7 @@ function createPluginDirectory(
 export interface RunOptions {
   plugins?: string[];
   targetDirectory?: string;
+  debuggedRules?: string[];
 }
 
 export async function run(options: RunOptions = {}): Promise<void> {
@@ -189,7 +197,11 @@ export async function run(options: RunOptions = {}): Promise<void> {
       pluginName,
       targetDirectory,
     );
-    const { failedRules } = await generateRulesFiles(loadedPlugin, pluginDir);
+    const { failedRules } = await generateRulesFiles(
+      loadedPlugin,
+      pluginDir,
+      options.debuggedRules,
+    );
 
     await generateRuleIndexFile(pluginDir, loadedPlugin, failedRules);
   }
