@@ -1,0 +1,15 @@
+diff --git a/src/rules/react/jsx-no-constructed-context-values.d.ts b/src/rules/react/jsx-no-constructed-context-values.d.ts
+index 410f060..80488e3 100644
+--- a/src/rules/react/jsx-no-constructed-context-values.d.ts
++++ b/src/rules/react/jsx-no-constructed-context-values.d.ts
+@@ -3,9 +3,7 @@ import type { RuleConfig } from '../rule-config';
+ /**
+  * Option.
+  */
+-export interface JsxNoConstructedContextValuesOption {
+-  [k: string]: any;
+-}
++export type JsxNoConstructedContextValuesOption = [];
+ 
+ /**
+  * Options.

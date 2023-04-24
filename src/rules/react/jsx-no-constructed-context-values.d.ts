@@ -3,9 +3,7 @@ import type { RuleConfig } from '../rule-config';
 /**
  * Option.
  */
-export interface JsxNoConstructedContextValuesOption {
-  [k: string]: any;
-}
+export type JsxNoConstructedContextValuesOption = [];
 
 /**
  * Options.
