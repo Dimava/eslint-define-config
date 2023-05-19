@@ -1,19 +1,35 @@
 diff --git a/src/rules/vitest/valid-title.d.ts b/src/rules/vitest/valid-title.d.ts
-index 8bdfe9a..83c707b 100644
+index 910931b..5fcf00e 100644
 --- a/src/rules/vitest/valid-title.d.ts
 +++ b/src/rules/vitest/valid-title.d.ts
-@@ -8,13 +8,7 @@ export interface ValidTitleOption {
-   disallowedWords?: string[];
-   /**
-    */
--  [k: string]:
--    | string
--    | [string]
--    | [string, string]
--    | {
--        [k: string]: string | [string] | [string, string];
--      };
-+  [k: string]: any;
- }
- 
- /**
+@@ -12,15 +12,22 @@ export interface ValidTitleRule {
+       {
+         ignoreTypeOfDescribeName?: boolean;
+         disallowedWords?: string[];
+-        /**
+-         */
+-        [k: string]:
+-          | string
+-          | [string]
+-          | [string, string]
++        mustNotMatch?:
+           | {
+-              [k: string]: string | [string] | [string, string];
+-            };
++              [K in 'describe' | 'test' | 'it']?:
++                | string
++                | [matcher: string, message?: string];
++            }
++          | [matcher: string, message?: string]
++          | string;
++        mustMatch?:
++          | {
++              [K in 'describe' | 'test' | 'it']?:
++                | string
++                | [matcher: string, message?: string];
++            }
++          | [matcher: string, message?: string]
++          | string;
+       },
+     ]
+   >;
