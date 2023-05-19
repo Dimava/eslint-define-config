@@ -1,23 +1,18 @@
 diff --git a/src/rules/react/jsx-no-constructed-context-values.d.ts b/src/rules/react/jsx-no-constructed-context-values.d.ts
-index 410f060..e356693 100644
+index b3617f5..1e67dc2 100644
 --- a/src/rules/react/jsx-no-constructed-context-values.d.ts
 +++ b/src/rules/react/jsx-no-constructed-context-values.d.ts
-@@ -1,17 +1,9 @@
- import type { RuleConfig } from '../rule-config';
- 
--/**
-- * Option.
-- */
--export interface JsxNoConstructedContextValuesOption {
--  [k: string]: any;
--}
--
- /**
-  * Options.
-  */
--export type JsxNoConstructedContextValuesOptions =
--  JsxNoConstructedContextValuesOption;
-+export type JsxNoConstructedContextValuesOptions = [];
- 
- /**
-  * Disallows JSX context provider values from taking values that will cause needless rerenders.
+@@ -6,12 +6,5 @@ export interface JsxNoConstructedContextValuesRule {
+    *
+    * @see [jsx-no-constructed-context-values](https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/jsx-no-constructed-context-values.md)
+    */
+-  'react/jsx-no-constructed-context-values': Rule<
+-    [
+-      RuleLevel,
+-      ...{
+-        [k: string]: any;
+-      },
+-    ]
+-  >;
++  'react/jsx-no-constructed-context-values': Rule<[RuleLevel]>;
+ }
