@@ -1,53 +1,37 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export type CommaDangleOption =
-  | []
-  | [
-      | Value
-      | {
-          arrays?: ValueWithIgnore;
-          objects?: ValueWithIgnore;
-          imports?: ValueWithIgnore;
-          exports?: ValueWithIgnore;
-          functions?: ValueWithIgnore;
-          enums?: ValueWithIgnore;
-          generics?: ValueWithIgnore;
-          tuples?: ValueWithIgnore;
-        },
-    ];
-export type Value = 'always-multiline' | 'always' | 'never' | 'only-multiline';
-export type ValueWithIgnore =
-  | 'always-multiline'
-  | 'always'
-  | 'never'
-  | 'only-multiline'
-  | 'ignore';
-
-/**
- * Options.
- */
-export type CommaDangleOptions = CommaDangleOption;
-
-/**
- * Require or disallow trailing commas.
- *
- * @see [comma-dangle](https://typescript-eslint.io/rules/comma-dangle)
- */
-export type CommaDangleRuleConfig = RuleConfig<CommaDangleOptions>;
-
-/**
- * Require or disallow trailing commas.
- *
- * @see [comma-dangle](https://typescript-eslint.io/rules/comma-dangle)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface CommaDangleRule {
   /**
    * Require or disallow trailing commas.
    *
    * @see [comma-dangle](https://typescript-eslint.io/rules/comma-dangle)
    */
-  '@typescript-eslint/comma-dangle': CommaDangleRuleConfig;
+  '@typescript-eslint/comma-dangle': Rule<
+    [
+      RuleLevel,
+      ...(
+        | []
+        | [
+            | Value
+            | {
+                arrays?: ValueWithIgnore;
+                objects?: ValueWithIgnore;
+                imports?: ValueWithIgnore;
+                exports?: ValueWithIgnore;
+                functions?: ValueWithIgnore;
+                enums?: ValueWithIgnore;
+                generics?: ValueWithIgnore;
+                tuples?: ValueWithIgnore;
+              },
+          ]
+      ),
+    ]
+  >;
 }
+type Value = 'always-multiline' | 'always' | 'never' | 'only-multiline';
+type ValueWithIgnore =
+  | 'always-multiline'
+  | 'always'
+  | 'never'
+  | 'only-multiline'
+  | 'ignore';

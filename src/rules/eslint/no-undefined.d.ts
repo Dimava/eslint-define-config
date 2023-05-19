@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow the use of `undefined` as an identifier.
- *
- * @see [no-undefined](https://eslint.org/docs/rules/no-undefined)
- */
-export type NoUndefinedRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow the use of `undefined` as an identifier.
- *
- * @see [no-undefined](https://eslint.org/docs/rules/no-undefined)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoUndefinedRule {
   /**
    * Disallow the use of `undefined` as an identifier.
    *
    * @see [no-undefined](https://eslint.org/docs/rules/no-undefined)
    */
-  'no-undefined': NoUndefinedRuleConfig;
+  'no-undefined': Rule<[RuleLevel]>;
 }

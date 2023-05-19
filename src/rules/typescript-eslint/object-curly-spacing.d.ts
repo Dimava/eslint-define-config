@@ -1,44 +1,19 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Config.
- */
-export interface ObjectCurlySpacingConfig {
-  arraysInObjects?: boolean;
-  objectsInObjects?: boolean;
-}
-
-/**
- * Option.
- */
-export type ObjectCurlySpacingOption = 'always' | 'never';
-
-/**
- * Options.
- */
-export type ObjectCurlySpacingOptions = [
-  ObjectCurlySpacingOption?,
-  ObjectCurlySpacingConfig?,
-];
-
-/**
- * Enforce consistent spacing inside braces.
- *
- * @see [object-curly-spacing](https://typescript-eslint.io/rules/object-curly-spacing)
- */
-export type ObjectCurlySpacingRuleConfig =
-  RuleConfig<ObjectCurlySpacingOptions>;
-
-/**
- * Enforce consistent spacing inside braces.
- *
- * @see [object-curly-spacing](https://typescript-eslint.io/rules/object-curly-spacing)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface ObjectCurlySpacingRule {
   /**
    * Enforce consistent spacing inside braces.
    *
    * @see [object-curly-spacing](https://typescript-eslint.io/rules/object-curly-spacing)
    */
-  '@typescript-eslint/object-curly-spacing': ObjectCurlySpacingRuleConfig;
+  '@typescript-eslint/object-curly-spacing': Rule<
+    [
+      RuleLevel,
+      'always' | 'never',
+      {
+        arraysInObjects?: boolean;
+        objectsInObjects?: boolean;
+      },
+    ]
+  >;
 }

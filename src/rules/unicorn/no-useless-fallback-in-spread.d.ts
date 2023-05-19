@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow useless fallback when spreading in object literals.
- *
- * @see [no-useless-fallback-in-spread](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/no-useless-fallback-in-spread.md)
- */
-export type NoUselessFallbackInSpreadRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow useless fallback when spreading in object literals.
- *
- * @see [no-useless-fallback-in-spread](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/no-useless-fallback-in-spread.md)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoUselessFallbackInSpreadRule {
   /**
    * Disallow useless fallback when spreading in object literals.
    *
    * @see [no-useless-fallback-in-spread](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/no-useless-fallback-in-spread.md)
    */
-  'unicorn/no-useless-fallback-in-spread': NoUselessFallbackInSpreadRuleConfig;
+  'unicorn/no-useless-fallback-in-spread': Rule<[RuleLevel]>;
 }

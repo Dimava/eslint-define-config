@@ -1,44 +1,24 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Config.
- */
-export interface MaxStatementsConfig {
-  ignoreTopLevelFunctions?: boolean;
-}
-
-/**
- * Option.
- */
-export type MaxStatementsOption =
-  | number
-  | {
-      maximum?: number;
-      max?: number;
-    };
-
-/**
- * Options.
- */
-export type MaxStatementsOptions = [MaxStatementsOption?, MaxStatementsConfig?];
-
-/**
- * Enforce a maximum number of statements allowed in function blocks.
- *
- * @see [max-statements](https://eslint.org/docs/rules/max-statements)
- */
-export type MaxStatementsRuleConfig = RuleConfig<MaxStatementsOptions>;
-
-/**
- * Enforce a maximum number of statements allowed in function blocks.
- *
- * @see [max-statements](https://eslint.org/docs/rules/max-statements)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface MaxStatementsRule {
   /**
    * Enforce a maximum number of statements allowed in function blocks.
    *
    * @see [max-statements](https://eslint.org/docs/rules/max-statements)
    */
-  'max-statements': MaxStatementsRuleConfig;
+  'max-statements': Rule<
+    [
+      RuleLevel,
+      (
+        | number
+        | {
+            maximum?: number;
+            max?: number;
+          }
+      ),
+      {
+        ignoreTopLevelFunctions?: boolean;
+      },
+    ]
+  >;
 }

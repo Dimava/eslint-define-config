@@ -1,19 +1,9 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Linter integration with remark plugins.
- *
- */
-export type RemarkRuleConfig = RuleConfig<[]>;
-
-/**
- * Linter integration with remark plugins.
- *
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface RemarkRule {
   /**
    * Linter integration with remark plugins.
    *
    */
-  'mdx/remark': RemarkRuleConfig;
+  'mdx/remark': Rule<[RuleLevel]>;
 }

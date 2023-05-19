@@ -1,22 +1,12 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow non-null assertions in the left operand of a nullish coalescing operator.
- *
- * @see [no-non-null-asserted-nullish-coalescing](https://typescript-eslint.io/rules/no-non-null-asserted-nullish-coalescing)
- */
-export type NoNonNullAssertedNullishCoalescingRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow non-null assertions in the left operand of a nullish coalescing operator.
- *
- * @see [no-non-null-asserted-nullish-coalescing](https://typescript-eslint.io/rules/no-non-null-asserted-nullish-coalescing)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoNonNullAssertedNullishCoalescingRule {
   /**
    * Disallow non-null assertions in the left operand of a nullish coalescing operator.
    *
    * @see [no-non-null-asserted-nullish-coalescing](https://typescript-eslint.io/rules/no-non-null-asserted-nullish-coalescing)
    */
-  '@typescript-eslint/no-non-null-asserted-nullish-coalescing': NoNonNullAssertedNullishCoalescingRuleConfig;
+  '@typescript-eslint/no-non-null-asserted-nullish-coalescing': Rule<
+    [RuleLevel]
+  >;
 }

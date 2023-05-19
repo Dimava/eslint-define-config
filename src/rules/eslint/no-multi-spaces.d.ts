@@ -1,39 +1,22 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export interface NoMultiSpacesOption {
-  exceptions?: {
-    /**
-     */
-    [k: string]: boolean;
-  };
-  ignoreEOLComments?: boolean;
-}
-
-/**
- * Options.
- */
-export type NoMultiSpacesOptions = [NoMultiSpacesOption?];
-
-/**
- * Disallow multiple spaces.
- *
- * @see [no-multi-spaces](https://eslint.org/docs/rules/no-multi-spaces)
- */
-export type NoMultiSpacesRuleConfig = RuleConfig<NoMultiSpacesOptions>;
-
-/**
- * Disallow multiple spaces.
- *
- * @see [no-multi-spaces](https://eslint.org/docs/rules/no-multi-spaces)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoMultiSpacesRule {
   /**
    * Disallow multiple spaces.
    *
    * @see [no-multi-spaces](https://eslint.org/docs/rules/no-multi-spaces)
    */
-  'no-multi-spaces': NoMultiSpacesRuleConfig;
+  'no-multi-spaces': Rule<
+    [
+      RuleLevel,
+      {
+        exceptions?: {
+          /**
+           */
+          [k: string]: boolean;
+        };
+        ignoreEOLComments?: boolean;
+      },
+    ]
+  >;
 }

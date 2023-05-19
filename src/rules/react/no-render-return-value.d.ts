@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow usage of the return value of ReactDOM.render.
- *
- * @see [no-render-return-value](https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/no-render-return-value.md)
- */
-export type NoRenderReturnValueRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow usage of the return value of ReactDOM.render.
- *
- * @see [no-render-return-value](https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/no-render-return-value.md)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoRenderReturnValueRule {
   /**
    * Disallow usage of the return value of ReactDOM.render.
    *
    * @see [no-render-return-value](https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/no-render-return-value.md)
    */
-  'react/no-render-return-value': NoRenderReturnValueRuleConfig;
+  'react/no-render-return-value': Rule<[RuleLevel]>;
 }

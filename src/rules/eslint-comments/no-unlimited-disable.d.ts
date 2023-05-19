@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow `eslint-disable` comments without rule names.
- *
- * @see [no-unlimited-disable](https://mysticatea.github.io/eslint-plugin-eslint-comments/rules/no-unlimited-disable.html)
- */
-export type NoUnlimitedDisableRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow `eslint-disable` comments without rule names.
- *
- * @see [no-unlimited-disable](https://mysticatea.github.io/eslint-plugin-eslint-comments/rules/no-unlimited-disable.html)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoUnlimitedDisableRule {
   /**
    * Disallow `eslint-disable` comments without rule names.
    *
    * @see [no-unlimited-disable](https://mysticatea.github.io/eslint-plugin-eslint-comments/rules/no-unlimited-disable.html)
    */
-  'eslint-comments/no-unlimited-disable': NoUnlimitedDisableRuleConfig;
+  'eslint-comments/no-unlimited-disable': Rule<[RuleLevel]>;
 }

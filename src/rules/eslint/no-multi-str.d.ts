@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow multiline strings.
- *
- * @see [no-multi-str](https://eslint.org/docs/rules/no-multi-str)
- */
-export type NoMultiStrRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow multiline strings.
- *
- * @see [no-multi-str](https://eslint.org/docs/rules/no-multi-str)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoMultiStrRule {
   /**
    * Disallow multiline strings.
    *
    * @see [no-multi-str](https://eslint.org/docs/rules/no-multi-str)
    */
-  'no-multi-str': NoMultiStrRuleConfig;
+  'no-multi-str': Rule<[RuleLevel]>;
 }

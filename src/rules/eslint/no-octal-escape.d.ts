@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow octal escape sequences in string literals.
- *
- * @see [no-octal-escape](https://eslint.org/docs/rules/no-octal-escape)
- */
-export type NoOctalEscapeRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow octal escape sequences in string literals.
- *
- * @see [no-octal-escape](https://eslint.org/docs/rules/no-octal-escape)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoOctalEscapeRule {
   /**
    * Disallow octal escape sequences in string literals.
    *
    * @see [no-octal-escape](https://eslint.org/docs/rules/no-octal-escape)
    */
-  'no-octal-escape': NoOctalEscapeRuleConfig;
+  'no-octal-escape': Rule<[RuleLevel]>;
 }

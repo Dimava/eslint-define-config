@@ -1,35 +1,18 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export interface DotNotationOption {
-  allowKeywords?: boolean;
-  allowPattern?: string;
-}
-
-/**
- * Options.
- */
-export type DotNotationOptions = [DotNotationOption?];
-
-/**
- * Enforce dot notation whenever possible.
- *
- * @see [dot-notation](https://eslint.org/docs/rules/dot-notation)
- */
-export type DotNotationRuleConfig = RuleConfig<DotNotationOptions>;
-
-/**
- * Enforce dot notation whenever possible.
- *
- * @see [dot-notation](https://eslint.org/docs/rules/dot-notation)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface DotNotationRule {
   /**
    * Enforce dot notation whenever possible.
    *
    * @see [dot-notation](https://eslint.org/docs/rules/dot-notation)
    */
-  'dot-notation': DotNotationRuleConfig;
+  'dot-notation': Rule<
+    [
+      RuleLevel,
+      {
+        allowKeywords?: boolean;
+        allowPattern?: string;
+      },
+    ]
+  >;
 }

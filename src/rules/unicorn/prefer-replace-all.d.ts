@@ -1,19 +1,5 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- *
- * @deprecated
- *
- * @see [prefer-replace-all](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/deprecated-rules.md#prefer-replace-all)
- */
-export type PreferReplaceAllRuleConfig = RuleConfig<[]>;
-
-/**
- *
- * @deprecated
- *
- * @see [prefer-replace-all](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/deprecated-rules.md#prefer-replace-all)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface PreferReplaceAllRule {
   /**
    *
@@ -21,5 +7,5 @@ export interface PreferReplaceAllRule {
    *
    * @see [prefer-replace-all](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/deprecated-rules.md#prefer-replace-all)
    */
-  'unicorn/prefer-replace-all': PreferReplaceAllRuleConfig;
+  'unicorn/prefer-replace-all': Rule<[RuleLevel]>;
 }

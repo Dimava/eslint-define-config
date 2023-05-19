@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow unnecessary spread.
- *
- * @see [no-useless-spread](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/no-useless-spread.md)
- */
-export type NoUselessSpreadRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow unnecessary spread.
- *
- * @see [no-useless-spread](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/no-useless-spread.md)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoUselessSpreadRule {
   /**
    * Disallow unnecessary spread.
    *
    * @see [no-useless-spread](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/no-useless-spread.md)
    */
-  'unicorn/no-useless-spread': NoUselessSpreadRuleConfig;
+  'unicorn/no-useless-spread': Rule<[RuleLevel]>;
 }

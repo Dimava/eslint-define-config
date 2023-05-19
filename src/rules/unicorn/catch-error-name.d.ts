@@ -1,35 +1,18 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export interface CatchErrorNameOption {
-  name?: string;
-  ignore?: any[];
-}
-
-/**
- * Options.
- */
-export type CatchErrorNameOptions = [CatchErrorNameOption?];
-
-/**
- * Enforce a specific parameter name in catch clauses.
- *
- * @see [catch-error-name](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/catch-error-name.md)
- */
-export type CatchErrorNameRuleConfig = RuleConfig<CatchErrorNameOptions>;
-
-/**
- * Enforce a specific parameter name in catch clauses.
- *
- * @see [catch-error-name](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/catch-error-name.md)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface CatchErrorNameRule {
   /**
    * Enforce a specific parameter name in catch clauses.
    *
    * @see [catch-error-name](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/catch-error-name.md)
    */
-  'unicorn/catch-error-name': CatchErrorNameRuleConfig;
+  'unicorn/catch-error-name': Rule<
+    [
+      RuleLevel,
+      {
+        name?: string;
+        ignore?: any[];
+      },
+    ]
+  >;
 }

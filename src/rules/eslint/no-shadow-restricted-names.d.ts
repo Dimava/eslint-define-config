@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow identifiers from shadowing restricted names.
- *
- * @see [no-shadow-restricted-names](https://eslint.org/docs/rules/no-shadow-restricted-names)
- */
-export type NoShadowRestrictedNamesRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow identifiers from shadowing restricted names.
- *
- * @see [no-shadow-restricted-names](https://eslint.org/docs/rules/no-shadow-restricted-names)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoShadowRestrictedNamesRule {
   /**
    * Disallow identifiers from shadowing restricted names.
    *
    * @see [no-shadow-restricted-names](https://eslint.org/docs/rules/no-shadow-restricted-names)
    */
-  'no-shadow-restricted-names': NoShadowRestrictedNamesRuleConfig;
+  'no-shadow-restricted-names': Rule<[RuleLevel]>;
 }

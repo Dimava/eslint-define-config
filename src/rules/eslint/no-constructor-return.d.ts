@@ -1,28 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Options.
- */
-export type NoConstructorReturnOptions = [];
-
-/**
- * Disallow returning value from constructor.
- *
- * @see [no-constructor-return](https://eslint.org/docs/rules/no-constructor-return)
- */
-export type NoConstructorReturnRuleConfig =
-  RuleConfig<NoConstructorReturnOptions>;
-
-/**
- * Disallow returning value from constructor.
- *
- * @see [no-constructor-return](https://eslint.org/docs/rules/no-constructor-return)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoConstructorReturnRule {
   /**
    * Disallow returning value from constructor.
    *
    * @see [no-constructor-return](https://eslint.org/docs/rules/no-constructor-return)
    */
-  'no-constructor-return': NoConstructorReturnRuleConfig;
+  'no-constructor-return': Rule<[RuleLevel]>;
 }

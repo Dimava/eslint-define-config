@@ -1,34 +1,17 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export interface NoEmptyOption {
-  allowEmptyCatch?: boolean;
-}
-
-/**
- * Options.
- */
-export type NoEmptyOptions = [NoEmptyOption?];
-
-/**
- * Disallow empty block statements.
- *
- * @see [no-empty](https://eslint.org/docs/rules/no-empty)
- */
-export type NoEmptyRuleConfig = RuleConfig<NoEmptyOptions>;
-
-/**
- * Disallow empty block statements.
- *
- * @see [no-empty](https://eslint.org/docs/rules/no-empty)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoEmptyRule {
   /**
    * Disallow empty block statements.
    *
    * @see [no-empty](https://eslint.org/docs/rules/no-empty)
    */
-  'no-empty': NoEmptyRuleConfig;
+  'no-empty': Rule<
+    [
+      RuleLevel,
+      {
+        allowEmptyCatch?: boolean;
+      },
+    ]
+  >;
 }

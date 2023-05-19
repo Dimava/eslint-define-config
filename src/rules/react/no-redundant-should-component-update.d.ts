@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow usage of shouldComponentUpdate when extending React.PureComponent.
- *
- * @see [no-redundant-should-component-update](https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/no-redundant-should-component-update.md)
- */
-export type NoRedundantShouldComponentUpdateRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow usage of shouldComponentUpdate when extending React.PureComponent.
- *
- * @see [no-redundant-should-component-update](https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/no-redundant-should-component-update.md)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoRedundantShouldComponentUpdateRule {
   /**
    * Disallow usage of shouldComponentUpdate when extending React.PureComponent.
    *
    * @see [no-redundant-should-component-update](https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/no-redundant-should-component-update.md)
    */
-  'react/no-redundant-should-component-update': NoRedundantShouldComponentUpdateRuleConfig;
+  'react/no-redundant-should-component-update': Rule<[RuleLevel]>;
 }

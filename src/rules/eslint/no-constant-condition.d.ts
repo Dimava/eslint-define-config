@@ -1,35 +1,17 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export interface NoConstantConditionOption {
-  checkLoops?: boolean;
-}
-
-/**
- * Options.
- */
-export type NoConstantConditionOptions = [NoConstantConditionOption?];
-
-/**
- * Disallow constant expressions in conditions.
- *
- * @see [no-constant-condition](https://eslint.org/docs/rules/no-constant-condition)
- */
-export type NoConstantConditionRuleConfig =
-  RuleConfig<NoConstantConditionOptions>;
-
-/**
- * Disallow constant expressions in conditions.
- *
- * @see [no-constant-condition](https://eslint.org/docs/rules/no-constant-condition)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoConstantConditionRule {
   /**
    * Disallow constant expressions in conditions.
    *
    * @see [no-constant-condition](https://eslint.org/docs/rules/no-constant-condition)
    */
-  'no-constant-condition': NoConstantConditionRuleConfig;
+  'no-constant-condition': Rule<
+    [
+      RuleLevel,
+      {
+        checkLoops?: boolean;
+      },
+    ]
+  >;
 }

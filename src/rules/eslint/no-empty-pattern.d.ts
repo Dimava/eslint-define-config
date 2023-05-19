@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow empty destructuring patterns.
- *
- * @see [no-empty-pattern](https://eslint.org/docs/rules/no-empty-pattern)
- */
-export type NoEmptyPatternRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow empty destructuring patterns.
- *
- * @see [no-empty-pattern](https://eslint.org/docs/rules/no-empty-pattern)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoEmptyPatternRule {
   /**
    * Disallow empty destructuring patterns.
    *
    * @see [no-empty-pattern](https://eslint.org/docs/rules/no-empty-pattern)
    */
-  'no-empty-pattern': NoEmptyPatternRuleConfig;
+  'no-empty-pattern': Rule<[RuleLevel]>;
 }

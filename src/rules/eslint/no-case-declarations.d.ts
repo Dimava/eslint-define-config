@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow lexical declarations in case clauses.
- *
- * @see [no-case-declarations](https://eslint.org/docs/rules/no-case-declarations)
- */
-export type NoCaseDeclarationsRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow lexical declarations in case clauses.
- *
- * @see [no-case-declarations](https://eslint.org/docs/rules/no-case-declarations)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoCaseDeclarationsRule {
   /**
    * Disallow lexical declarations in case clauses.
    *
    * @see [no-case-declarations](https://eslint.org/docs/rules/no-case-declarations)
    */
-  'no-case-declarations': NoCaseDeclarationsRuleConfig;
+  'no-case-declarations': Rule<[RuleLevel]>;
 }

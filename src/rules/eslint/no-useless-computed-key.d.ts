@@ -1,35 +1,17 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export interface NoUselessComputedKeyOption {
-  enforceForClassMembers?: boolean;
-}
-
-/**
- * Options.
- */
-export type NoUselessComputedKeyOptions = [NoUselessComputedKeyOption?];
-
-/**
- * Disallow unnecessary computed property keys in objects and classes.
- *
- * @see [no-useless-computed-key](https://eslint.org/docs/rules/no-useless-computed-key)
- */
-export type NoUselessComputedKeyRuleConfig =
-  RuleConfig<NoUselessComputedKeyOptions>;
-
-/**
- * Disallow unnecessary computed property keys in objects and classes.
- *
- * @see [no-useless-computed-key](https://eslint.org/docs/rules/no-useless-computed-key)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoUselessComputedKeyRule {
   /**
    * Disallow unnecessary computed property keys in objects and classes.
    *
    * @see [no-useless-computed-key](https://eslint.org/docs/rules/no-useless-computed-key)
    */
-  'no-useless-computed-key': NoUselessComputedKeyRuleConfig;
+  'no-useless-computed-key': Rule<
+    [
+      RuleLevel,
+      {
+        enforceForClassMembers?: boolean;
+      },
+    ]
+  >;
 }

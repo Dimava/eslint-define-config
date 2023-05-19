@@ -1,33 +1,18 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export interface NoMultiAsterisksOption {
-  allowWhitespace?: boolean;
-  preventAtEnd?: boolean;
-  preventAtMiddleLines?: boolean;
-}
-
-/**
- * Options.
- */
-export type NoMultiAsterisksOptions = [NoMultiAsterisksOption?];
-
-/**
- *
- * @see [no-multi-asterisks](https://github.com/gajus/eslint-plugin-jsdoc#eslint-plugin-jsdoc-rules-no-multi-asterisks)
- */
-export type NoMultiAsterisksRuleConfig = RuleConfig<NoMultiAsterisksOptions>;
-
-/**
- *
- * @see [no-multi-asterisks](https://github.com/gajus/eslint-plugin-jsdoc#eslint-plugin-jsdoc-rules-no-multi-asterisks)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoMultiAsterisksRule {
   /**
    *
    * @see [no-multi-asterisks](https://github.com/gajus/eslint-plugin-jsdoc#eslint-plugin-jsdoc-rules-no-multi-asterisks)
    */
-  'jsdoc/no-multi-asterisks': NoMultiAsterisksRuleConfig;
+  'jsdoc/no-multi-asterisks': Rule<
+    [
+      RuleLevel,
+      {
+        allowWhitespace?: boolean;
+        preventAtEnd?: boolean;
+        preventAtMiddleLines?: boolean;
+      },
+    ]
+  >;
 }

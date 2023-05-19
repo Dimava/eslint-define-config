@@ -1,34 +1,17 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export interface NoMultiAssignOption {
-  ignoreNonDeclaration?: boolean;
-}
-
-/**
- * Options.
- */
-export type NoMultiAssignOptions = [NoMultiAssignOption?];
-
-/**
- * Disallow use of chained assignment expressions.
- *
- * @see [no-multi-assign](https://eslint.org/docs/rules/no-multi-assign)
- */
-export type NoMultiAssignRuleConfig = RuleConfig<NoMultiAssignOptions>;
-
-/**
- * Disallow use of chained assignment expressions.
- *
- * @see [no-multi-assign](https://eslint.org/docs/rules/no-multi-assign)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoMultiAssignRule {
   /**
    * Disallow use of chained assignment expressions.
    *
    * @see [no-multi-assign](https://eslint.org/docs/rules/no-multi-assign)
    */
-  'no-multi-assign': NoMultiAssignRuleConfig;
+  'no-multi-assign': Rule<
+    [
+      RuleLevel,
+      {
+        ignoreNonDeclaration?: boolean;
+      },
+    ]
+  >;
 }

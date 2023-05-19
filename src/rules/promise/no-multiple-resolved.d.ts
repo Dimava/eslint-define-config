@@ -1,19 +1,9 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- *
- * @see [no-multiple-resolved](https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/no-multiple-resolved.md)
- */
-export type NoMultipleResolvedRuleConfig = RuleConfig<[]>;
-
-/**
- *
- * @see [no-multiple-resolved](https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/no-multiple-resolved.md)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoMultipleResolvedRule {
   /**
    *
    * @see [no-multiple-resolved](https://github.com/eslint-community/eslint-plugin-promise/blob/main/docs/rules/no-multiple-resolved.md)
    */
-  'promise/no-multiple-resolved': NoMultipleResolvedRuleConfig;
+  'promise/no-multiple-resolved': Rule<[RuleLevel]>;
 }

@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow unused private class members.
- *
- * @see [no-unused-private-class-members](https://eslint.org/docs/rules/no-unused-private-class-members)
- */
-export type NoUnusedPrivateClassMembersRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow unused private class members.
- *
- * @see [no-unused-private-class-members](https://eslint.org/docs/rules/no-unused-private-class-members)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoUnusedPrivateClassMembersRule {
   /**
    * Disallow unused private class members.
    *
    * @see [no-unused-private-class-members](https://eslint.org/docs/rules/no-unused-private-class-members)
    */
-  'no-unused-private-class-members': NoUnusedPrivateClassMembersRuleConfig;
+  'no-unused-private-class-members': Rule<[RuleLevel]>;
 }

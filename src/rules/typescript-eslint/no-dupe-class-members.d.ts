@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow duplicate class members.
- *
- * @see [no-dupe-class-members](https://typescript-eslint.io/rules/no-dupe-class-members)
- */
-export type NoDupeClassMembersRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow duplicate class members.
- *
- * @see [no-dupe-class-members](https://typescript-eslint.io/rules/no-dupe-class-members)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoDupeClassMembersRule {
   /**
    * Disallow duplicate class members.
    *
    * @see [no-dupe-class-members](https://typescript-eslint.io/rules/no-dupe-class-members)
    */
-  '@typescript-eslint/no-dupe-class-members': NoDupeClassMembersRuleConfig;
+  '@typescript-eslint/no-dupe-class-members': Rule<[RuleLevel]>;
 }

@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow characters which are made with multiple code points in character class syntax.
- *
- * @see [no-misleading-character-class](https://eslint.org/docs/rules/no-misleading-character-class)
- */
-export type NoMisleadingCharacterClassRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow characters which are made with multiple code points in character class syntax.
- *
- * @see [no-misleading-character-class](https://eslint.org/docs/rules/no-misleading-character-class)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoMisleadingCharacterClassRule {
   /**
    * Disallow characters which are made with multiple code points in character class syntax.
    *
    * @see [no-misleading-character-class](https://eslint.org/docs/rules/no-misleading-character-class)
    */
-  'no-misleading-character-class': NoMisleadingCharacterClassRuleConfig;
+  'no-misleading-character-class': Rule<[RuleLevel]>;
 }

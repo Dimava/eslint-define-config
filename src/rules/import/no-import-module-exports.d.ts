@@ -1,32 +1,16 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export interface NoImportModuleExportsOption {
-  exceptions?: any[];
-}
-
-/**
- * Options.
- */
-export type NoImportModuleExportsOptions = [NoImportModuleExportsOption?];
-
-/**
- * Forbid import statements with CommonJS module.exports.
- *
- */
-export type NoImportModuleExportsRuleConfig =
-  RuleConfig<NoImportModuleExportsOptions>;
-
-/**
- * Forbid import statements with CommonJS module.exports.
- *
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoImportModuleExportsRule {
   /**
    * Forbid import statements with CommonJS module.exports.
    *
    */
-  'import/no-import-module-exports': NoImportModuleExportsRuleConfig;
+  'import/no-import-module-exports': Rule<
+    [
+      RuleLevel,
+      {
+        exceptions?: any[];
+      },
+    ]
+  >;
 }

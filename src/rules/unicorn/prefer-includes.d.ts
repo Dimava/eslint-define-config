@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Prefer `.includes()` over `.indexOf()` and `Array#some()` when checking for existence or non-existence.
- *
- * @see [prefer-includes](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/prefer-includes.md)
- */
-export type PreferIncludesRuleConfig = RuleConfig<[]>;
-
-/**
- * Prefer `.includes()` over `.indexOf()` and `Array#some()` when checking for existence or non-existence.
- *
- * @see [prefer-includes](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/prefer-includes.md)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface PreferIncludesRule {
   /**
    * Prefer `.includes()` over `.indexOf()` and `Array#some()` when checking for existence or non-existence.
    *
    * @see [prefer-includes](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/prefer-includes.md)
    */
-  'unicorn/prefer-includes': PreferIncludesRuleConfig;
+  'unicorn/prefer-includes': Rule<[RuleLevel]>;
 }

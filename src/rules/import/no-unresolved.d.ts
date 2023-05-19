@@ -1,42 +1,25 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export interface NoUnresolvedOption {
-  commonjs?: boolean;
-  amd?: boolean;
-  esmodule?: boolean;
-  /**
-   * @minItems 1
-   */
-  ignore?: [string, ...string[]];
-  caseSensitive?: boolean;
-  caseSensitiveStrict?: boolean;
-}
-
-/**
- * Options.
- */
-export type NoUnresolvedOptions = [NoUnresolvedOption?];
-
-/**
- * Ensure imports point to a file/module that can be resolved.
- *
- * @see [no-unresolved](https://github.com/import-js/eslint-plugin-import/blob/v2.27.5/docs/rules/no-unresolved.md)
- */
-export type NoUnresolvedRuleConfig = RuleConfig<NoUnresolvedOptions>;
-
-/**
- * Ensure imports point to a file/module that can be resolved.
- *
- * @see [no-unresolved](https://github.com/import-js/eslint-plugin-import/blob/v2.27.5/docs/rules/no-unresolved.md)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoUnresolvedRule {
   /**
    * Ensure imports point to a file/module that can be resolved.
    *
    * @see [no-unresolved](https://github.com/import-js/eslint-plugin-import/blob/v2.27.5/docs/rules/no-unresolved.md)
    */
-  'import/no-unresolved': NoUnresolvedRuleConfig;
+  'import/no-unresolved': Rule<
+    [
+      RuleLevel,
+      {
+        commonjs?: boolean;
+        amd?: boolean;
+        esmodule?: boolean;
+        /**
+         * @minItems 1
+         */
+        ignore?: [string, ...string[]];
+        caseSensitive?: boolean;
+        caseSensitiveStrict?: boolean;
+      },
+    ]
+  >;
 }

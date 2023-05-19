@@ -1,38 +1,34 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export interface ValidTitleOption {
-  ignoreTypeOfDescribeName?: boolean;
-  disallowedWords?: string[];
-  /**
-   */
-  [k: string]: any;
-}
-
-/**
- * Options.
- */
-export type ValidTitleOptions = [ValidTitleOption?];
-
-/**
- * Enforce valid titles.
- *
- * @see [valid-title](https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/valid-title.md)
- */
-export type ValidTitleRuleConfig = RuleConfig<ValidTitleOptions>;
-
-/**
- * Enforce valid titles.
- *
- * @see [valid-title](https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/valid-title.md)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface ValidTitleRule {
   /**
    * Enforce valid titles.
    *
    * @see [valid-title](https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/valid-title.md)
    */
-  'vitest/valid-title': ValidTitleRuleConfig;
+  'vitest/valid-title': Rule<
+    [
+      RuleLevel,
+      {
+        ignoreTypeOfDescribeName?: boolean;
+        disallowedWords?: string[];
+        mustNotMatch?:
+          | {
+              [K in 'describe' | 'test' | 'it']?:
+                | string
+                | [matcher: string, message?: string];
+            }
+          | [matcher: string, message?: string]
+          | string;
+        mustMatch?:
+          | {
+              [K in 'describe' | 'test' | 'it']?:
+                | string
+                | [matcher: string, message?: string];
+            }
+          | [matcher: string, message?: string]
+          | string;
+      },
+    ]
+  >;
 }

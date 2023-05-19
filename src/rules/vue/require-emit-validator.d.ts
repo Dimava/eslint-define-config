@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Require type definitions in emits.
- *
- * @see [require-emit-validator](https://eslint.vuejs.org/rules/require-emit-validator.html)
- */
-export type RequireEmitValidatorRuleConfig = RuleConfig<[]>;
-
-/**
- * Require type definitions in emits.
- *
- * @see [require-emit-validator](https://eslint.vuejs.org/rules/require-emit-validator.html)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface RequireEmitValidatorRule {
   /**
    * Require type definitions in emits.
    *
    * @see [require-emit-validator](https://eslint.vuejs.org/rules/require-emit-validator.html)
    */
-  'vue/require-emit-validator': RequireEmitValidatorRuleConfig;
+  'vue/require-emit-validator': Rule<[RuleLevel]>;
 }

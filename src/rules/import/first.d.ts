@@ -1,32 +1,12 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export type FirstOption = 'absolute-first' | 'disable-absolute-first';
-
-/**
- * Options.
- */
-export type FirstOptions = [FirstOption?];
-
-/**
- * Ensure all imports appear before other statements.
- *
- * @see [first](https://github.com/import-js/eslint-plugin-import/blob/v2.27.5/docs/rules/first.md)
- */
-export type FirstRuleConfig = RuleConfig<FirstOptions>;
-
-/**
- * Ensure all imports appear before other statements.
- *
- * @see [first](https://github.com/import-js/eslint-plugin-import/blob/v2.27.5/docs/rules/first.md)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface FirstRule {
   /**
    * Ensure all imports appear before other statements.
    *
    * @see [first](https://github.com/import-js/eslint-plugin-import/blob/v2.27.5/docs/rules/first.md)
    */
-  'import/first': FirstRuleConfig;
+  'import/first': Rule<
+    [RuleLevel, 'absolute-first' | 'disable-absolute-first']
+  >;
 }

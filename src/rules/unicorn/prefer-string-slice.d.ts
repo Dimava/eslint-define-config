@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Prefer `String#slice()` over `String#substr()` and `String#substring()`.
- *
- * @see [prefer-string-slice](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/prefer-string-slice.md)
- */
-export type PreferStringSliceRuleConfig = RuleConfig<[]>;
-
-/**
- * Prefer `String#slice()` over `String#substr()` and `String#substring()`.
- *
- * @see [prefer-string-slice](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/prefer-string-slice.md)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface PreferStringSliceRule {
   /**
    * Prefer `String#slice()` over `String#substr()` and `String#substring()`.
    *
    * @see [prefer-string-slice](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/prefer-string-slice.md)
    */
-  'unicorn/prefer-string-slice': PreferStringSliceRuleConfig;
+  'unicorn/prefer-string-slice': Rule<[RuleLevel]>;
 }

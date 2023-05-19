@@ -1,21 +1,5 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow `catch` clause parameters from shadowing variables in the outer scope.
- *
- * @deprecated
- *
- * @see [no-catch-shadow](https://eslint.org/docs/rules/no-catch-shadow)
- */
-export type NoCatchShadowRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow `catch` clause parameters from shadowing variables in the outer scope.
- *
- * @deprecated
- *
- * @see [no-catch-shadow](https://eslint.org/docs/rules/no-catch-shadow)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoCatchShadowRule {
   /**
    * Disallow `catch` clause parameters from shadowing variables in the outer scope.
@@ -24,5 +8,5 @@ export interface NoCatchShadowRule {
    *
    * @see [no-catch-shadow](https://eslint.org/docs/rules/no-catch-shadow)
    */
-  'no-catch-shadow': NoCatchShadowRuleConfig;
+  'no-catch-shadow': Rule<[RuleLevel]>;
 }

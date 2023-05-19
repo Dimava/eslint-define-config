@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Prefer `childNode.remove()` over `parentNode.removeChild(childNode)`.
- *
- * @see [prefer-dom-node-remove](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/prefer-dom-node-remove.md)
- */
-export type PreferDomNodeRemoveRuleConfig = RuleConfig<[]>;
-
-/**
- * Prefer `childNode.remove()` over `parentNode.removeChild(childNode)`.
- *
- * @see [prefer-dom-node-remove](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/prefer-dom-node-remove.md)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface PreferDomNodeRemoveRule {
   /**
    * Prefer `childNode.remove()` over `parentNode.removeChild(childNode)`.
    *
    * @see [prefer-dom-node-remove](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/rules/prefer-dom-node-remove.md)
    */
-  'unicorn/prefer-dom-node-remove': PreferDomNodeRemoveRuleConfig;
+  'unicorn/prefer-dom-node-remove': Rule<[RuleLevel]>;
 }

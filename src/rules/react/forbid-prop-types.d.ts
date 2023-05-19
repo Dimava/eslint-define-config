@@ -1,37 +1,20 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export interface ForbidPropTypesOption {
-  forbid?: string[];
-  checkContextTypes?: boolean;
-  checkChildContextTypes?: boolean;
-  [k: string]: any;
-}
-
-/**
- * Options.
- */
-export type ForbidPropTypesOptions = [ForbidPropTypesOption?];
-
-/**
- * Disallow certain propTypes.
- *
- * @see [forbid-prop-types](https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/forbid-prop-types.md)
- */
-export type ForbidPropTypesRuleConfig = RuleConfig<ForbidPropTypesOptions>;
-
-/**
- * Disallow certain propTypes.
- *
- * @see [forbid-prop-types](https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/forbid-prop-types.md)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface ForbidPropTypesRule {
   /**
    * Disallow certain propTypes.
    *
    * @see [forbid-prop-types](https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/forbid-prop-types.md)
    */
-  'react/forbid-prop-types': ForbidPropTypesRuleConfig;
+  'react/forbid-prop-types': Rule<
+    [
+      RuleLevel,
+      {
+        forbid?: string[];
+        checkContextTypes?: boolean;
+        checkChildContextTypes?: boolean;
+        [k: string]: any;
+      },
+    ]
+  >;
 }

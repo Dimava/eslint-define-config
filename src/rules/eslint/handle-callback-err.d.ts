@@ -1,31 +1,5 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export type HandleCallbackErrOption = string;
-
-/**
- * Options.
- */
-export type HandleCallbackErrOptions = [HandleCallbackErrOption?];
-
-/**
- * Require error handling in callbacks.
- *
- * @deprecated
- *
- * @see [handle-callback-err](https://eslint.org/docs/rules/handle-callback-err)
- */
-export type HandleCallbackErrRuleConfig = RuleConfig<HandleCallbackErrOptions>;
-
-/**
- * Require error handling in callbacks.
- *
- * @deprecated
- *
- * @see [handle-callback-err](https://eslint.org/docs/rules/handle-callback-err)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface HandleCallbackErrRule {
   /**
    * Require error handling in callbacks.
@@ -34,5 +8,5 @@ export interface HandleCallbackErrRule {
    *
    * @see [handle-callback-err](https://eslint.org/docs/rules/handle-callback-err)
    */
-  'handle-callback-err': HandleCallbackErrRuleConfig;
+  'handle-callback-err': Rule<[RuleLevel, string]>;
 }

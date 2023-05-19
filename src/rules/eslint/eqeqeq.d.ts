@@ -1,42 +1,26 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export type EqeqeqOption =
-  | []
-  | ['always']
-  | [
-      'always',
-      {
-        null?: 'always' | 'never' | 'ignore';
-      },
-    ]
-  | []
-  | ['smart' | 'allow-null'];
-
-/**
- * Options.
- */
-export type EqeqeqOptions = EqeqeqOption;
-
-/**
- * Require the use of `===` and `!==`.
- *
- * @see [eqeqeq](https://eslint.org/docs/rules/eqeqeq)
- */
-export type EqeqeqRuleConfig = RuleConfig<EqeqeqOptions>;
-
-/**
- * Require the use of `===` and `!==`.
- *
- * @see [eqeqeq](https://eslint.org/docs/rules/eqeqeq)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface EqeqeqRule {
   /**
    * Require the use of `===` and `!==`.
    *
    * @see [eqeqeq](https://eslint.org/docs/rules/eqeqeq)
    */
-  eqeqeq: EqeqeqRuleConfig;
+  eqeqeq: Rule<
+    [
+      RuleLevel,
+      ...(
+        | []
+        | ['always']
+        | [
+            'always',
+            {
+              null?: 'always' | 'never' | 'ignore';
+            },
+          ]
+        | []
+        | ['smart' | 'allow-null']
+      ),
+    ]
+  >;
 }

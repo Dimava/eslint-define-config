@@ -1,44 +1,5 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export interface PreferReflectOption {
-  exceptions?: (
-    | 'apply'
-    | 'call'
-    | 'delete'
-    | 'defineProperty'
-    | 'getOwnPropertyDescriptor'
-    | 'getPrototypeOf'
-    | 'setPrototypeOf'
-    | 'isExtensible'
-    | 'getOwnPropertyNames'
-    | 'preventExtensions'
-  )[];
-}
-
-/**
- * Options.
- */
-export type PreferReflectOptions = [PreferReflectOption?];
-
-/**
- * Require `Reflect` methods where applicable.
- *
- * @deprecated
- *
- * @see [prefer-reflect](https://eslint.org/docs/rules/prefer-reflect)
- */
-export type PreferReflectRuleConfig = RuleConfig<PreferReflectOptions>;
-
-/**
- * Require `Reflect` methods where applicable.
- *
- * @deprecated
- *
- * @see [prefer-reflect](https://eslint.org/docs/rules/prefer-reflect)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface PreferReflectRule {
   /**
    * Require `Reflect` methods where applicable.
@@ -47,5 +8,23 @@ export interface PreferReflectRule {
    *
    * @see [prefer-reflect](https://eslint.org/docs/rules/prefer-reflect)
    */
-  'prefer-reflect': PreferReflectRuleConfig;
+  'prefer-reflect': Rule<
+    [
+      RuleLevel,
+      {
+        exceptions?: (
+          | 'apply'
+          | 'call'
+          | 'delete'
+          | 'defineProperty'
+          | 'getOwnPropertyDescriptor'
+          | 'getPrototypeOf'
+          | 'setPrototypeOf'
+          | 'isExtensible'
+          | 'getOwnPropertyNames'
+          | 'preventExtensions'
+        )[];
+      },
+    ]
+  >;
 }

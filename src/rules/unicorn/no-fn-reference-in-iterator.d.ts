@@ -1,19 +1,5 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- *
- * @deprecated
- *
- * @see [no-fn-reference-in-iterator](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/deprecated-rules.md#no-fn-reference-in-iterator)
- */
-export type NoFnReferenceInIteratorRuleConfig = RuleConfig<[]>;
-
-/**
- *
- * @deprecated
- *
- * @see [no-fn-reference-in-iterator](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/deprecated-rules.md#no-fn-reference-in-iterator)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoFnReferenceInIteratorRule {
   /**
    *
@@ -21,5 +7,5 @@ export interface NoFnReferenceInIteratorRule {
    *
    * @see [no-fn-reference-in-iterator](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v46.0.0/docs/deprecated-rules.md#no-fn-reference-in-iterator)
    */
-  'unicorn/no-fn-reference-in-iterator': NoFnReferenceInIteratorRuleConfig;
+  'unicorn/no-fn-reference-in-iterator': Rule<[RuleLevel]>;
 }

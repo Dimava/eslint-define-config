@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow unnecessary concatenation of literals or template literals in `<template>`.
- *
- * @see [no-useless-concat](https://eslint.vuejs.org/rules/no-useless-concat.html)
- */
-export type NoUselessConcatRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow unnecessary concatenation of literals or template literals in `<template>`.
- *
- * @see [no-useless-concat](https://eslint.vuejs.org/rules/no-useless-concat.html)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoUselessConcatRule {
   /**
    * Disallow unnecessary concatenation of literals or template literals in `<template>`.
    *
    * @see [no-useless-concat](https://eslint.vuejs.org/rules/no-useless-concat.html)
    */
-  'vue/no-useless-concat': NoUselessConcatRuleConfig;
+  'vue/no-useless-concat': Rule<[RuleLevel]>;
 }

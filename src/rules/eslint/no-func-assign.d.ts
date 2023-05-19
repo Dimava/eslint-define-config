@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow reassigning `function` declarations.
- *
- * @see [no-func-assign](https://eslint.org/docs/rules/no-func-assign)
- */
-export type NoFuncAssignRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow reassigning `function` declarations.
- *
- * @see [no-func-assign](https://eslint.org/docs/rules/no-func-assign)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoFuncAssignRule {
   /**
    * Disallow reassigning `function` declarations.
    *
    * @see [no-func-assign](https://eslint.org/docs/rules/no-func-assign)
    */
-  'no-func-assign': NoFuncAssignRuleConfig;
+  'no-func-assign': Rule<[RuleLevel]>;
 }

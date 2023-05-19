@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow plus sign.
- *
- * @see [no-plus-sign](https://ota-meshi.github.io/eslint-plugin-jsonc/rules/no-plus-sign.html)
- */
-export type NoPlusSignRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow plus sign.
- *
- * @see [no-plus-sign](https://ota-meshi.github.io/eslint-plugin-jsonc/rules/no-plus-sign.html)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoPlusSignRule {
   /**
    * Disallow plus sign.
    *
    * @see [no-plus-sign](https://ota-meshi.github.io/eslint-plugin-jsonc/rules/no-plus-sign.html)
    */
-  'jsonc/no-plus-sign': NoPlusSignRuleConfig;
+  'jsonc/no-plus-sign': Rule<[RuleLevel]>;
 }

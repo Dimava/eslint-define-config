@@ -1,38 +1,21 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export interface SpaceUnaryOpsOption {
-  words?: boolean;
-  nonwords?: boolean;
-  overrides?: {
-    [k: string]: boolean;
-  };
-}
-
-/**
- * Options.
- */
-export type SpaceUnaryOpsOptions = [SpaceUnaryOpsOption?];
-
-/**
- * Enforce consistent spacing before or after unary operators.
- *
- * @see [space-unary-ops](https://eslint.org/docs/rules/space-unary-ops)
- */
-export type SpaceUnaryOpsRuleConfig = RuleConfig<SpaceUnaryOpsOptions>;
-
-/**
- * Enforce consistent spacing before or after unary operators.
- *
- * @see [space-unary-ops](https://eslint.org/docs/rules/space-unary-ops)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface SpaceUnaryOpsRule {
   /**
    * Enforce consistent spacing before or after unary operators.
    *
    * @see [space-unary-ops](https://eslint.org/docs/rules/space-unary-ops)
    */
-  'space-unary-ops': SpaceUnaryOpsRuleConfig;
+  'space-unary-ops': Rule<
+    [
+      RuleLevel,
+      {
+        words?: boolean;
+        nonwords?: boolean;
+        overrides?: {
+          [k: string]: boolean;
+        };
+      },
+    ]
+  >;
 }

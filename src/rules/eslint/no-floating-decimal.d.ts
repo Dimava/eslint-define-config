@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow leading or trailing decimal points in numeric literals.
- *
- * @see [no-floating-decimal](https://eslint.org/docs/rules/no-floating-decimal)
- */
-export type NoFloatingDecimalRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow leading or trailing decimal points in numeric literals.
- *
- * @see [no-floating-decimal](https://eslint.org/docs/rules/no-floating-decimal)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoFloatingDecimalRule {
   /**
    * Disallow leading or trailing decimal points in numeric literals.
    *
    * @see [no-floating-decimal](https://eslint.org/docs/rules/no-floating-decimal)
    */
-  'no-floating-decimal': NoFloatingDecimalRuleConfig;
+  'no-floating-decimal': Rule<[RuleLevel]>;
 }
