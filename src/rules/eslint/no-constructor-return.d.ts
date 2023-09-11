@@ -6,12 +6,5 @@ export interface NoConstructorReturnRule {
    *
    * @see [no-constructor-return](https://eslint.org/docs/latest/rules/no-constructor-return)
    */
-  'no-constructor-return': Rule<
-    [
-      RuleLevel,
-      ...{
-        [k: string]: any;
-      },
-    ]
-  >;
+  'no-constructor-return': Rule<[RuleLevel]>;
 }

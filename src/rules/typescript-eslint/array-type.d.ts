@@ -6,5 +6,13 @@ export interface ArrayTypeRule {
    *
    * @see [array-type](https://typescript-eslint.io/rules/array-type)
    */
-  '@typescript-eslint/array-type': Rule<[RuleLevel, ...any[]]>;
+  '@typescript-eslint/array-type': Rule<
+    [
+      RuleLevel,
+      {
+        default?: 'array' | 'generic' | 'array-simple';
+        readonly?: 'array' | 'generic' | 'array-simple';
+      },
+    ]
+  >;
 }

@@ -12,7 +12,7 @@ export interface FileExtensionInImportRule {
       'always' | 'never',
       {
         tryExtensions?: string[];
-        [k: string]: 'always' | 'never';
+        [ext: `.${string}`]: 'always' | 'never';
       },
     ]
   >;

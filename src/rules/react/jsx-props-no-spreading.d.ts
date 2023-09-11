@@ -14,8 +14,6 @@ export interface JsxPropsNoSpreadingRule {
         custom?: 'enforce' | 'ignore';
         exceptions?: string[];
         [k: string]: any;
-      } & {
-        [k: string]: any;
       },
     ]
   >;

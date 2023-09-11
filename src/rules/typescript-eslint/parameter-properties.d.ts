@@ -6,5 +6,35 @@ export interface ParameterPropertiesRule {
    *
    * @see [parameter-properties](https://typescript-eslint.io/rules/parameter-properties)
    */
-  '@typescript-eslint/parameter-properties': Rule<[RuleLevel, ...any[]]>;
+  '@typescript-eslint/parameter-properties': Rule<
+    [
+      RuleLevel,
+      {
+        /**
+         * @minItems 1
+         */
+        allow?: [
+          (
+            | 'readonly'
+            | 'private'
+            | 'protected'
+            | 'public'
+            | 'private readonly'
+            | 'protected readonly'
+            | 'public readonly'
+          ),
+          ...(
+            | 'readonly'
+            | 'private'
+            | 'protected'
+            | 'public'
+            | 'private readonly'
+            | 'protected readonly'
+            | 'public readonly'
+          )[],
+        ];
+        prefer?: 'class-property' | 'parameter-property';
+      },
+    ]
+  >;
 }

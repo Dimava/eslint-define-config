@@ -6,12 +6,5 @@ export interface JsxNoConstructedContextValuesRule {
    *
    * @see [jsx-no-constructed-context-values](https://github.com/jsx-eslint/eslint-plugin-react/tree/master/docs/rules/jsx-no-constructed-context-values.md)
    */
-  'react/jsx-no-constructed-context-values': Rule<
-    [
-      RuleLevel,
-      ...{
-        [k: string]: any;
-      },
-    ]
-  >;
+  'react/jsx-no-constructed-context-values': Rule<[RuleLevel]>;
 }

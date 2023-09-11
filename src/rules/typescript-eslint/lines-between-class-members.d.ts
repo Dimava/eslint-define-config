@@ -9,8 +9,10 @@ export interface LinesBetweenClassMembersRule {
   '@typescript-eslint/lines-between-class-members': Rule<
     [
       RuleLevel,
-      ...{
-        [k: string]: any;
+      'always' | 'never',
+      {
+        exceptAfterSingleLine?: boolean;
+        exceptAfterOverload?: boolean;
       },
     ]
   >;

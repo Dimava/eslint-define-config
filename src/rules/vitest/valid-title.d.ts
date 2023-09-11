@@ -15,13 +15,7 @@ export interface ValidTitleRule {
         disallowedWords?: string[];
         /**
          */
-        [k: string]:
-          | string
-          | [string]
-          | [string, string]
-          | {
-              [k: string]: string | [string] | [string, string];
-            };
+        [k: string]: any;
       },
     ]
   >;

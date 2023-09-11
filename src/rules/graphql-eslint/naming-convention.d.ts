@@ -83,8 +83,7 @@ export interface NamingConventionRule {
               VariableDefinition?: AsString | AsObject;
               allowLeadingUnderscore?: boolean;
               allowTrailingUnderscore?: boolean;
-              /**
-               */
+            } & {
               [k: string]: AsString | AsObject;
             },
           ]

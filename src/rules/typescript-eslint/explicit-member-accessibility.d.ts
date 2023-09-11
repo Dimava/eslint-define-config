@@ -7,6 +7,19 @@ export interface ExplicitMemberAccessibilityRule {
    * @see [explicit-member-accessibility](https://typescript-eslint.io/rules/explicit-member-accessibility)
    */
   '@typescript-eslint/explicit-member-accessibility': Rule<
-    [RuleLevel, ...any[]]
+    [
+      RuleLevel,
+      {
+        accessibility?: 'explicit' | 'no-public' | 'off';
+        overrides?: {
+          accessors?: 'explicit' | 'no-public' | 'off';
+          constructors?: 'explicit' | 'no-public' | 'off';
+          methods?: 'explicit' | 'no-public' | 'off';
+          properties?: 'explicit' | 'no-public' | 'off';
+          parameterProperties?: 'explicit' | 'no-public' | 'off';
+        };
+        ignoredMethodNames?: string[];
+      },
+    ]
   >;
 }
