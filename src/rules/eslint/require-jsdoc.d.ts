@@ -1,39 +1,5 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export interface RequireJsdocOption {
-  require?: {
-    ClassDeclaration?: boolean;
-    MethodDefinition?: boolean;
-    FunctionDeclaration?: boolean;
-    ArrowFunctionExpression?: boolean;
-    FunctionExpression?: boolean;
-  };
-}
-
-/**
- * Options.
- */
-export type RequireJsdocOptions = [RequireJsdocOption?];
-
-/**
- * Require JSDoc comments.
- *
- * @deprecated
- *
- * @see [require-jsdoc](https://eslint.org/docs/latest/rules/require-jsdoc)
- */
-export type RequireJsdocRuleConfig = RuleConfig<RequireJsdocOptions>;
-
-/**
- * Require JSDoc comments.
- *
- * @deprecated
- *
- * @see [require-jsdoc](https://eslint.org/docs/latest/rules/require-jsdoc)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface RequireJsdocRule {
   /**
    * Require JSDoc comments.
@@ -42,5 +8,18 @@ export interface RequireJsdocRule {
    *
    * @see [require-jsdoc](https://eslint.org/docs/latest/rules/require-jsdoc)
    */
-  'require-jsdoc': RequireJsdocRuleConfig;
+  'require-jsdoc': Rule<
+    [
+      RuleLevel,
+      {
+        require?: {
+          ClassDeclaration?: boolean;
+          MethodDefinition?: boolean;
+          FunctionDeclaration?: boolean;
+          ArrowFunctionExpression?: boolean;
+          FunctionExpression?: boolean;
+        };
+      },
+    ]
+  >;
 }

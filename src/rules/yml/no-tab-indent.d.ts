@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow tabs for indentation.
- *
- * @see [no-tab-indent](https://ota-meshi.github.io/eslint-plugin-yml/rules/no-tab-indent.html)
- */
-export type NoTabIndentRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow tabs for indentation.
- *
- * @see [no-tab-indent](https://ota-meshi.github.io/eslint-plugin-yml/rules/no-tab-indent.html)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoTabIndentRule {
   /**
    * Disallow tabs for indentation.
    *
    * @see [no-tab-indent](https://ota-meshi.github.io/eslint-plugin-yml/rules/no-tab-indent.html)
    */
-  'yml/no-tab-indent': NoTabIndentRuleConfig;
+  'yml/no-tab-indent': Rule<[RuleLevel]>;
 }

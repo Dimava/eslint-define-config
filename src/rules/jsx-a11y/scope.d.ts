@@ -1,34 +1,17 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export interface ScopeOption {
-  [k: string]: any;
-}
-
-/**
- * Options.
- */
-export type ScopeOptions = [ScopeOption?];
-
-/**
- * Enforce `scope` prop is only used on `<th>` elements.
- *
- * @see [scope](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/scope.md)
- */
-export type ScopeRuleConfig = RuleConfig<ScopeOptions>;
-
-/**
- * Enforce `scope` prop is only used on `<th>` elements.
- *
- * @see [scope](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/scope.md)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface ScopeRule {
   /**
    * Enforce `scope` prop is only used on `<th>` elements.
    *
    * @see [scope](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/scope.md)
    */
-  'jsx-a11y/scope': ScopeRuleConfig;
+  'jsx-a11y/scope': Rule<
+    [
+      RuleLevel,
+      {
+        [k: string]: any;
+      },
+    ]
+  >;
 }

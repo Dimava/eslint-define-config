@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Do not use deprecated APIs.
- *
- * @see [deprecation](https://github.com/gund/eslint-plugin-deprecation)
- */
-export type DeprecationRuleConfig = RuleConfig<[]>;
-
-/**
- * Do not use deprecated APIs.
- *
- * @see [deprecation](https://github.com/gund/eslint-plugin-deprecation)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface DeprecationRule {
   /**
    * Do not use deprecated APIs.
    *
    * @see [deprecation](https://github.com/gund/eslint-plugin-deprecation)
    */
-  'deprecation/deprecation': DeprecationRuleConfig;
+  'deprecation/deprecation': Rule<[RuleLevel]>;
 }

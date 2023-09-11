@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Require `let` or `const` instead of `var`.
- *
- * @see [no-var](https://eslint.org/docs/latest/rules/no-var)
- */
-export type NoVarRuleConfig = RuleConfig<[]>;
-
-/**
- * Require `let` or `const` instead of `var`.
- *
- * @see [no-var](https://eslint.org/docs/latest/rules/no-var)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoVarRule {
   /**
    * Require `let` or `const` instead of `var`.
    *
    * @see [no-var](https://eslint.org/docs/latest/rules/no-var)
    */
-  'no-var': NoVarRuleConfig;
+  'no-var': Rule<[RuleLevel]>;
 }

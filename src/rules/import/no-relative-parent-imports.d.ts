@@ -1,41 +1,23 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export interface NoRelativeParentImportsOption {
-  commonjs?: boolean;
-  amd?: boolean;
-  esmodule?: boolean;
-  /**
-   * @minItems 1
-   */
-  ignore?: [string, ...string[]];
-}
-
-/**
- * Options.
- */
-export type NoRelativeParentImportsOptions = [NoRelativeParentImportsOption?];
-
-/**
- * Forbid importing modules from parent directories.
- *
- * @see [no-relative-parent-imports](https://github.com/import-js/eslint-plugin-import/blob/v2.28.0/docs/rules/no-relative-parent-imports.md)
- */
-export type NoRelativeParentImportsRuleConfig =
-  RuleConfig<NoRelativeParentImportsOptions>;
-
-/**
- * Forbid importing modules from parent directories.
- *
- * @see [no-relative-parent-imports](https://github.com/import-js/eslint-plugin-import/blob/v2.28.0/docs/rules/no-relative-parent-imports.md)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoRelativeParentImportsRule {
   /**
    * Forbid importing modules from parent directories.
    *
    * @see [no-relative-parent-imports](https://github.com/import-js/eslint-plugin-import/blob/v2.28.0/docs/rules/no-relative-parent-imports.md)
    */
-  'import/no-relative-parent-imports': NoRelativeParentImportsRuleConfig;
+  'import/no-relative-parent-imports': Rule<
+    [
+      RuleLevel,
+      {
+        commonjs?: boolean;
+        amd?: boolean;
+        esmodule?: boolean;
+        /**
+         * @minItems 1
+         */
+        ignore?: [string, ...string[]];
+      },
+    ]
+  >;
 }

@@ -1,34 +1,17 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export interface NoInvalidThisOption {
-  capIsConstructor?: boolean;
-}
-
-/**
- * Options.
- */
-export type NoInvalidThisOptions = [NoInvalidThisOption?];
-
-/**
- * Disallow `this` keywords outside of classes or class-like objects.
- *
- * @see [no-invalid-this](https://typescript-eslint.io/rules/no-invalid-this)
- */
-export type NoInvalidThisRuleConfig = RuleConfig<NoInvalidThisOptions>;
-
-/**
- * Disallow `this` keywords outside of classes or class-like objects.
- *
- * @see [no-invalid-this](https://typescript-eslint.io/rules/no-invalid-this)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoInvalidThisRule {
   /**
    * Disallow `this` keywords outside of classes or class-like objects.
    *
    * @see [no-invalid-this](https://typescript-eslint.io/rules/no-invalid-this)
    */
-  '@typescript-eslint/no-invalid-this': NoInvalidThisRuleConfig;
+  '@typescript-eslint/no-invalid-this': Rule<
+    [
+      RuleLevel,
+      {
+        capIsConstructor?: boolean;
+      },
+    ]
+  >;
 }

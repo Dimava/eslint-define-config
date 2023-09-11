@@ -1,44 +1,25 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-/**
- * @minItems 0
- */
-export type NoRestrictedComponentOptionsOption = (
-  | string
-  | string[]
-  | {
-      name: string | string[];
-      message?: string;
-    }
-)[];
-
-/**
- * Options.
- */
-export type NoRestrictedComponentOptionsOptions =
-  NoRestrictedComponentOptionsOption;
-
-/**
- * Disallow specific component option.
- *
- * @see [no-restricted-component-options](https://eslint.vuejs.org/rules/no-restricted-component-options.html)
- */
-export type NoRestrictedComponentOptionsRuleConfig =
-  RuleConfig<NoRestrictedComponentOptionsOptions>;
-
-/**
- * Disallow specific component option.
- *
- * @see [no-restricted-component-options](https://eslint.vuejs.org/rules/no-restricted-component-options.html)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoRestrictedComponentOptionsRule {
   /**
    * Disallow specific component option.
    *
    * @see [no-restricted-component-options](https://eslint.vuejs.org/rules/no-restricted-component-options.html)
    */
-  'vue/no-restricted-component-options': NoRestrictedComponentOptionsRuleConfig;
+  'vue/no-restricted-component-options': Rule<
+    [
+      RuleLevel,
+      .../**
+       * @minItems 0
+       */
+      (
+        | string
+        | string[]
+        | {
+            name: string | string[];
+            message?: string;
+          }
+      )[],
+    ]
+  >;
 }

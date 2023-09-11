@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Enforce that deprecated fields or enum values are not in use by operations.
- *
- * @see [no-deprecated](https://the-guild.dev/graphql/eslint/rules/no-deprecated)
- */
-export type NoDeprecatedRuleConfig = RuleConfig<[]>;
-
-/**
- * Enforce that deprecated fields or enum values are not in use by operations.
- *
- * @see [no-deprecated](https://the-guild.dev/graphql/eslint/rules/no-deprecated)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoDeprecatedRule {
   /**
    * Enforce that deprecated fields or enum values are not in use by operations.
    *
    * @see [no-deprecated](https://the-guild.dev/graphql/eslint/rules/no-deprecated)
    */
-  '@graphql-eslint/no-deprecated': NoDeprecatedRuleConfig;
+  '@graphql-eslint/no-deprecated': Rule<[RuleLevel]>;
 }

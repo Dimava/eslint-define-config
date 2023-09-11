@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow unnecessary `catch` clauses.
- *
- * @see [no-useless-catch](https://eslint.org/docs/latest/rules/no-useless-catch)
- */
-export type NoUselessCatchRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow unnecessary `catch` clauses.
- *
- * @see [no-useless-catch](https://eslint.org/docs/latest/rules/no-useless-catch)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoUselessCatchRule {
   /**
    * Disallow unnecessary `catch` clauses.
    *
    * @see [no-useless-catch](https://eslint.org/docs/latest/rules/no-useless-catch)
    */
-  'no-useless-catch': NoUselessCatchRuleConfig;
+  'no-useless-catch': Rule<[RuleLevel]>;
 }

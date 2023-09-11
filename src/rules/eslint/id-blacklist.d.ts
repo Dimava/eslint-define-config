@@ -1,31 +1,5 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export type IdBlacklistOption = string[];
-
-/**
- * Options.
- */
-export type IdBlacklistOptions = IdBlacklistOption;
-
-/**
- * Disallow specified identifiers.
- *
- * @deprecated
- *
- * @see [id-blacklist](https://eslint.org/docs/latest/rules/id-blacklist)
- */
-export type IdBlacklistRuleConfig = RuleConfig<IdBlacklistOptions>;
-
-/**
- * Disallow specified identifiers.
- *
- * @deprecated
- *
- * @see [id-blacklist](https://eslint.org/docs/latest/rules/id-blacklist)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface IdBlacklistRule {
   /**
    * Disallow specified identifiers.
@@ -34,5 +8,5 @@ export interface IdBlacklistRule {
    *
    * @see [id-blacklist](https://eslint.org/docs/latest/rules/id-blacklist)
    */
-  'id-blacklist': IdBlacklistRuleConfig;
+  'id-blacklist': Rule<[RuleLevel, ...string[]]>;
 }

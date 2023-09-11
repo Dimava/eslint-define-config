@@ -1,34 +1,17 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export interface NoUnsafeNegationOption {
-  enforceForOrderingRelations?: boolean;
-}
-
-/**
- * Options.
- */
-export type NoUnsafeNegationOptions = [NoUnsafeNegationOption?];
-
-/**
- * Disallow negating the left operand of relational operators.
- *
- * @see [no-unsafe-negation](https://eslint.org/docs/latest/rules/no-unsafe-negation)
- */
-export type NoUnsafeNegationRuleConfig = RuleConfig<NoUnsafeNegationOptions>;
-
-/**
- * Disallow negating the left operand of relational operators.
- *
- * @see [no-unsafe-negation](https://eslint.org/docs/latest/rules/no-unsafe-negation)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoUnsafeNegationRule {
   /**
    * Disallow negating the left operand of relational operators.
    *
    * @see [no-unsafe-negation](https://eslint.org/docs/latest/rules/no-unsafe-negation)
    */
-  'no-unsafe-negation': NoUnsafeNegationRuleConfig;
+  'no-unsafe-negation': Rule<
+    [
+      RuleLevel,
+      {
+        enforceForOrderingRelations?: boolean;
+      },
+    ]
+  >;
 }

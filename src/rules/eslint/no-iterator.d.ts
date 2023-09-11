@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow the use of the `__iterator__` property.
- *
- * @see [no-iterator](https://eslint.org/docs/latest/rules/no-iterator)
- */
-export type NoIteratorRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow the use of the `__iterator__` property.
- *
- * @see [no-iterator](https://eslint.org/docs/latest/rules/no-iterator)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoIteratorRule {
   /**
    * Disallow the use of the `__iterator__` property.
    *
    * @see [no-iterator](https://eslint.org/docs/latest/rules/no-iterator)
    */
-  'no-iterator': NoIteratorRuleConfig;
+  'no-iterator': Rule<[RuleLevel]>;
 }

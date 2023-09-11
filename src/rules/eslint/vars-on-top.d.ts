@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Require `var` declarations be placed at the top of their containing scope.
- *
- * @see [vars-on-top](https://eslint.org/docs/latest/rules/vars-on-top)
- */
-export type VarsOnTopRuleConfig = RuleConfig<[]>;
-
-/**
- * Require `var` declarations be placed at the top of their containing scope.
- *
- * @see [vars-on-top](https://eslint.org/docs/latest/rules/vars-on-top)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface VarsOnTopRule {
   /**
    * Require `var` declarations be placed at the top of their containing scope.
    *
    * @see [vars-on-top](https://eslint.org/docs/latest/rules/vars-on-top)
    */
-  'vars-on-top': VarsOnTopRuleConfig;
+  'vars-on-top': Rule<[RuleLevel]>;
 }

@@ -1,21 +1,5 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow negating the left operand in `in` expressions.
- *
- * @deprecated
- *
- * @see [no-negated-in-lhs](https://eslint.org/docs/latest/rules/no-negated-in-lhs)
- */
-export type NoNegatedInLhsRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow negating the left operand in `in` expressions.
- *
- * @deprecated
- *
- * @see [no-negated-in-lhs](https://eslint.org/docs/latest/rules/no-negated-in-lhs)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoNegatedInLhsRule {
   /**
    * Disallow negating the left operand in `in` expressions.
@@ -24,5 +8,5 @@ export interface NoNegatedInLhsRule {
    *
    * @see [no-negated-in-lhs](https://eslint.org/docs/latest/rules/no-negated-in-lhs)
    */
-  'no-negated-in-lhs': NoNegatedInLhsRuleConfig;
+  'no-negated-in-lhs': Rule<[RuleLevel]>;
 }

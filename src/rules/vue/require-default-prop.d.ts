@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Require default value for props.
- *
- * @see [require-default-prop](https://eslint.vuejs.org/rules/require-default-prop.html)
- */
-export type RequireDefaultPropRuleConfig = RuleConfig<[]>;
-
-/**
- * Require default value for props.
- *
- * @see [require-default-prop](https://eslint.vuejs.org/rules/require-default-prop.html)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface RequireDefaultPropRule {
   /**
    * Require default value for props.
    *
    * @see [require-default-prop](https://eslint.vuejs.org/rules/require-default-prop.html)
    */
-  'vue/require-default-prop': RequireDefaultPropRuleConfig;
+  'vue/require-default-prop': Rule<[RuleLevel]>;
 }

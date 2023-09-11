@@ -1,38 +1,12 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export type ComponentOptionsNameCasingOption =
-  | 'camelCase'
-  | 'kebab-case'
-  | 'PascalCase';
-
-/**
- * Options.
- */
-export type ComponentOptionsNameCasingOptions = [
-  ComponentOptionsNameCasingOption?,
-];
-
-/**
- * Enforce the casing of component name in `components` options.
- *
- * @see [component-options-name-casing](https://eslint.vuejs.org/rules/component-options-name-casing.html)
- */
-export type ComponentOptionsNameCasingRuleConfig =
-  RuleConfig<ComponentOptionsNameCasingOptions>;
-
-/**
- * Enforce the casing of component name in `components` options.
- *
- * @see [component-options-name-casing](https://eslint.vuejs.org/rules/component-options-name-casing.html)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface ComponentOptionsNameCasingRule {
   /**
    * Enforce the casing of component name in `components` options.
    *
    * @see [component-options-name-casing](https://eslint.vuejs.org/rules/component-options-name-casing.html)
    */
-  'vue/component-options-name-casing': ComponentOptionsNameCasingRuleConfig;
+  'vue/component-options-name-casing': Rule<
+    [RuleLevel, 'camelCase' | 'kebab-case' | 'PascalCase']
+  >;
 }

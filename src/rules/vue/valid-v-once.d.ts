@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Enforce valid `v-once` directives.
- *
- * @see [valid-v-once](https://eslint.vuejs.org/rules/valid-v-once.html)
- */
-export type ValidVOnceRuleConfig = RuleConfig<[]>;
-
-/**
- * Enforce valid `v-once` directives.
- *
- * @see [valid-v-once](https://eslint.vuejs.org/rules/valid-v-once.html)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface ValidVOnceRule {
   /**
    * Enforce valid `v-once` directives.
    *
    * @see [valid-v-once](https://eslint.vuejs.org/rules/valid-v-once.html)
    */
-  'vue/valid-v-once': ValidVOnceRuleConfig;
+  'vue/valid-v-once': Rule<[RuleLevel]>;
 }

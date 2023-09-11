@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Enforce the use of `for-of` loop over the standard `for` loop where possible.
- *
- * @see [prefer-for-of](https://typescript-eslint.io/rules/prefer-for-of)
- */
-export type PreferForOfRuleConfig = RuleConfig<[]>;
-
-/**
- * Enforce the use of `for-of` loop over the standard `for` loop where possible.
- *
- * @see [prefer-for-of](https://typescript-eslint.io/rules/prefer-for-of)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface PreferForOfRule {
   /**
    * Enforce the use of `for-of` loop over the standard `for` loop where possible.
    *
    * @see [prefer-for-of](https://typescript-eslint.io/rules/prefer-for-of)
    */
-  '@typescript-eslint/prefer-for-of': PreferForOfRuleConfig;
+  '@typescript-eslint/prefer-for-of': Rule<[RuleLevel]>;
 }

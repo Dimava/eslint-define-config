@@ -1,32 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export type RadixOption = 'always' | 'as-needed';
-
-/**
- * Options.
- */
-export type RadixOptions = [RadixOption?];
-
-/**
- * Enforce the consistent use of the radix argument when using `parseInt()`.
- *
- * @see [radix](https://eslint.org/docs/latest/rules/radix)
- */
-export type RadixRuleConfig = RuleConfig<RadixOptions>;
-
-/**
- * Enforce the consistent use of the radix argument when using `parseInt()`.
- *
- * @see [radix](https://eslint.org/docs/latest/rules/radix)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface RadixRule {
   /**
    * Enforce the consistent use of the radix argument when using `parseInt()`.
    *
    * @see [radix](https://eslint.org/docs/latest/rules/radix)
    */
-  radix: RadixRuleConfig;
+  radix: Rule<[RuleLevel, 'always' | 'as-needed']>;
 }

@@ -1,35 +1,18 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export interface AnchorHasContentOption {
-  components?: string[];
-  [k: string]: any;
-}
-
-/**
- * Options.
- */
-export type AnchorHasContentOptions = [AnchorHasContentOption?];
-
-/**
- * Enforce all anchors to contain accessible content.
- *
- * @see [anchor-has-content](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/anchor-has-content.md)
- */
-export type AnchorHasContentRuleConfig = RuleConfig<AnchorHasContentOptions>;
-
-/**
- * Enforce all anchors to contain accessible content.
- *
- * @see [anchor-has-content](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/anchor-has-content.md)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface AnchorHasContentRule {
   /**
    * Enforce all anchors to contain accessible content.
    *
    * @see [anchor-has-content](https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/tree/HEAD/docs/rules/anchor-has-content.md)
    */
-  'jsx-a11y/anchor-has-content': AnchorHasContentRuleConfig;
+  'jsx-a11y/anchor-has-content': Rule<
+    [
+      RuleLevel,
+      {
+        components?: string[];
+        [k: string]: any;
+      },
+    ]
+  >;
 }

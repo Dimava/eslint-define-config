@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Suggest using `vi.spyOn`.
- *
- * @see [prefer-spy-on](https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-spy-on.md)
- */
-export type PreferSpyOnRuleConfig = RuleConfig<[]>;
-
-/**
- * Suggest using `vi.spyOn`.
- *
- * @see [prefer-spy-on](https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-spy-on.md)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface PreferSpyOnRule {
   /**
    * Suggest using `vi.spyOn`.
    *
    * @see [prefer-spy-on](https://github.com/veritem/eslint-plugin-vitest/blob/main/docs/rules/prefer-spy-on.md)
    */
-  'vitest/prefer-spy-on': PreferSpyOnRuleConfig;
+  'vitest/prefer-spy-on': Rule<[RuleLevel]>;
 }

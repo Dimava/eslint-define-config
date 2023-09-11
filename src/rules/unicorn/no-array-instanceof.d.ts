@@ -1,19 +1,5 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- *
- * @deprecated
- *
- * @see [no-array-instanceof](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.1/docs/deprecated-rules.md#no-array-instanceof)
- */
-export type NoArrayInstanceofRuleConfig = RuleConfig<[]>;
-
-/**
- *
- * @deprecated
- *
- * @see [no-array-instanceof](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.1/docs/deprecated-rules.md#no-array-instanceof)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoArrayInstanceofRule {
   /**
    *
@@ -21,5 +7,5 @@ export interface NoArrayInstanceofRule {
    *
    * @see [no-array-instanceof](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.1/docs/deprecated-rules.md#no-array-instanceof)
    */
-  'unicorn/no-array-instanceof': NoArrayInstanceofRuleConfig;
+  'unicorn/no-array-instanceof': Rule<[RuleLevel]>;
 }

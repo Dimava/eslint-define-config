@@ -1,21 +1,5 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow `new` operators with calls to `require`.
- *
- * @deprecated
- *
- * @see [no-new-require](https://eslint.org/docs/latest/rules/no-new-require)
- */
-export type NoNewRequireRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow `new` operators with calls to `require`.
- *
- * @deprecated
- *
- * @see [no-new-require](https://eslint.org/docs/latest/rules/no-new-require)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoNewRequireRule {
   /**
    * Disallow `new` operators with calls to `require`.
@@ -24,5 +8,5 @@ export interface NoNewRequireRule {
    *
    * @see [no-new-require](https://eslint.org/docs/latest/rules/no-new-require)
    */
-  'no-new-require': NoNewRequireRuleConfig;
+  'no-new-require': Rule<[RuleLevel]>;
 }

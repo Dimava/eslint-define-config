@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Require symbol descriptions.
- *
- * @see [symbol-description](https://eslint.org/docs/latest/rules/symbol-description)
- */
-export type SymbolDescriptionRuleConfig = RuleConfig<[]>;
-
-/**
- * Require symbol descriptions.
- *
- * @see [symbol-description](https://eslint.org/docs/latest/rules/symbol-description)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface SymbolDescriptionRule {
   /**
    * Require symbol descriptions.
    *
    * @see [symbol-description](https://eslint.org/docs/latest/rules/symbol-description)
    */
-  'symbol-description': SymbolDescriptionRuleConfig;
+  'symbol-description': Rule<[RuleLevel]>;
 }

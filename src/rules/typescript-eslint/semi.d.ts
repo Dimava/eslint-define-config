@@ -1,49 +1,33 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Option.
- */
-export type SemiOption =
-  | []
-  | ['never']
-  | [
-      'never',
-      {
-        beforeStatementContinuationChars?: 'always' | 'any' | 'never';
-      },
-    ]
-  | []
-  | ['always']
-  | [
-      'always',
-      {
-        omitLastInOneLineBlock?: boolean;
-        omitLastInOneLineClassBody?: boolean;
-      },
-    ];
-
-/**
- * Options.
- */
-export type SemiOptions = SemiOption;
-
-/**
- * Require or disallow semicolons instead of ASI.
- *
- * @see [semi](https://typescript-eslint.io/rules/semi)
- */
-export type SemiRuleConfig = RuleConfig<SemiOptions>;
-
-/**
- * Require or disallow semicolons instead of ASI.
- *
- * @see [semi](https://typescript-eslint.io/rules/semi)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface SemiRule {
   /**
    * Require or disallow semicolons instead of ASI.
    *
    * @see [semi](https://typescript-eslint.io/rules/semi)
    */
-  '@typescript-eslint/semi': SemiRuleConfig;
+  '@typescript-eslint/semi': Rule<
+    [
+      RuleLevel,
+      ...(
+        | []
+        | ['never']
+        | [
+            'never',
+            {
+              beforeStatementContinuationChars?: 'always' | 'any' | 'never';
+            },
+          ]
+        | []
+        | ['always']
+        | [
+            'always',
+            {
+              omitLastInOneLineBlock?: boolean;
+              omitLastInOneLineClassBody?: boolean;
+            },
+          ]
+      ),
+    ]
+  >;
 }

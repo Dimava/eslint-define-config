@@ -1,19 +1,5 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- *
- * @deprecated
- *
- * @see [prefer-flat-map](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.1/docs/deprecated-rules.md#prefer-flat-map)
- */
-export type PreferFlatMapRuleConfig = RuleConfig<[]>;
-
-/**
- *
- * @deprecated
- *
- * @see [prefer-flat-map](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.1/docs/deprecated-rules.md#prefer-flat-map)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface PreferFlatMapRule {
   /**
    *
@@ -21,5 +7,5 @@ export interface PreferFlatMapRule {
    *
    * @see [prefer-flat-map](https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v48.0.1/docs/deprecated-rules.md#prefer-flat-map)
    */
-  'unicorn/prefer-flat-map': PreferFlatMapRuleConfig;
+  'unicorn/prefer-flat-map': Rule<[RuleLevel]>;
 }

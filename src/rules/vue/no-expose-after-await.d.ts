@@ -1,22 +1,10 @@
-import type { RuleConfig } from '../rule-config';
-
-/**
- * Disallow asynchronously registered `expose`.
- *
- * @see [no-expose-after-await](https://eslint.vuejs.org/rules/no-expose-after-await.html)
- */
-export type NoExposeAfterAwaitRuleConfig = RuleConfig<[]>;
-
-/**
- * Disallow asynchronously registered `expose`.
- *
- * @see [no-expose-after-await](https://eslint.vuejs.org/rules/no-expose-after-await.html)
- */
+import type { Rule } from '../rule-config';
+import type { RuleLevel } from '../rule-severity';
 export interface NoExposeAfterAwaitRule {
   /**
    * Disallow asynchronously registered `expose`.
    *
    * @see [no-expose-after-await](https://eslint.vuejs.org/rules/no-expose-after-await.html)
    */
-  'vue/no-expose-after-await': NoExposeAfterAwaitRuleConfig;
+  'vue/no-expose-after-await': Rule<[RuleLevel]>;
 }
