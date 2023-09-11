@@ -1,0 +1,19 @@
+diff --git a/src/rules/typescript-eslint/array-type.d.ts b/src/rules/typescript-eslint/array-type.d.ts
+index 86bf5a7..b6b9db7 100644
+--- a/src/rules/typescript-eslint/array-type.d.ts
++++ b/src/rules/typescript-eslint/array-type.d.ts
+@@ -6,5 +6,13 @@ export interface ArrayTypeRule {
+    *
+    * @see [array-type](https://typescript-eslint.io/rules/array-type)
+    */
+-  '@typescript-eslint/array-type': Rule<[RuleLevel, ...any[]]>;
++  '@typescript-eslint/array-type': Rule<
++    [
++      RuleLevel,
++      {
++        default?: 'array' | 'generic' | 'array-simple';
++        readonly?: 'array' | 'generic' | 'array-simple';
++      },
++    ]
++  >;
+ }

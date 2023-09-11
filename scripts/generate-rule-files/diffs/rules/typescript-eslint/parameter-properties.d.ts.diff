@@ -1,0 +1,41 @@
+diff --git a/src/rules/typescript-eslint/parameter-properties.d.ts b/src/rules/typescript-eslint/parameter-properties.d.ts
+index 3f80f6f..acd7b27 100644
+--- a/src/rules/typescript-eslint/parameter-properties.d.ts
++++ b/src/rules/typescript-eslint/parameter-properties.d.ts
+@@ -6,5 +6,35 @@ export interface ParameterPropertiesRule {
+    *
+    * @see [parameter-properties](https://typescript-eslint.io/rules/parameter-properties)
+    */
+-  '@typescript-eslint/parameter-properties': Rule<[RuleLevel, ...any[]]>;
++  '@typescript-eslint/parameter-properties': Rule<
++    [
++      RuleLevel,
++      {
++        /**
++         * @minItems 1
++         */
++        allow?: [
++          (
++            | 'readonly'
++            | 'private'
++            | 'protected'
++            | 'public'
++            | 'private readonly'
++            | 'protected readonly'
++            | 'public readonly'
++          ),
++          ...(
++            | 'readonly'
++            | 'private'
++            | 'protected'
++            | 'public'
++            | 'private readonly'
++            | 'protected readonly'
++            | 'public readonly'
++          )[],
++        ];
++        prefer?: 'class-property' | 'parameter-property';
++      },
++    ]
++  >;
+ }
